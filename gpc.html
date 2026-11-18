@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPC 2.0 | Elise L’Hopitault</title>
+<meta name="description" content="GPC 2.0: an executive reporting product in Power BI for ENGIE’s business units, adapted from a Figma mock-up.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F3EE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elise L’Hopitault">
+<meta property="og:title" content="GPC 2.0 | Elise L’Hopitault">
+<meta property="og:description" content="GPC 2.0: an executive reporting product in Power BI for ENGIE’s business units, adapted from a Figma mock-up.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GPC 2.0 | Elise L’Hopitault">
+<meta name="twitter:description" content="GPC 2.0: an executive reporting product in Power BI for ENGIE’s business units, adapted from a Figma mock-up.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23641822'%3EEL%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/roboto-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/roboto-mono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument-sans.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-display-700.woff2) format('woff2')}
+
+body{margin:0;background:#F5F3EE}
+a{color:#641822}a:hover{color:#3D0E15}
+
+
+html{-webkit-text-size-adjust:100%}body{min-height:100vh}.zoom{display:block;cursor:zoom-in}
+@media (max-width:1024px){
+  [style*="padding:11px 50px"]{padding:11px 28px!important}
+  [style*="padding:18px 40px"]{padding:14px 28px!important}
+  nav[style*="gap:8px 52px"],nav[style*="gap:8px 36px"]{gap:8px 28px!important}
+}
+@media (max-width:768px){
+  [style*="padding:11px 50px"],[style*="padding:18px 40px"]{padding:10px 20px!important;gap:8px 12px!important}
+  [style*="padding:0 32px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="padding:0 24px"],[style*="padding:0px 24px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="margin-top:300px"]{margin-top:130px!important}
+  [style*="margin-top:360px"]{margin-top:150px!important}
+  h1[style*="font-size:50px"]{font-size:32px!important}
+  h1[style*="font-size:60px"]{font-size:38px!important}
+  h2[style*="font-size:32px"]{font-size:26px!important}
+  h2[style*="font-size:30px"]{font-size:24px!important}
+  h2[style*="font-size:28px"]{font-size:23px!important}
+  blockquote{font-size:22px!important;padding-left:20px!important}
+  [style*="margin-right:250px"]{margin-right:0!important}
+  [style*="margin:120px auto 0"],[style*="margin:130px auto 0"],[style*="margin:150px auto 0"],[style*="margin:160px auto 0"],[style*="margin:170px auto 0"]{margin-top:72px!important}
+  [style*="margin:88px auto 0"]{margin-top:56px!important}
+  [style*="margin:0px auto 0;padding:88px"]{padding-top:48px!important}
+  [style*="margin:0 0 107px"]{margin-bottom:48px!important}
+  [style*="margin:0 0 70px"]{margin-bottom:36px!important}
+  [style*="padding:90px"]{padding-top:56px!important;padding-bottom:80px!important}
+  [style*="gap:48px 96px"],[style*="gap:40px 96px"],[style*="gap:48px 71px"],[style*="gap:40px 72px"]{gap:36px!important}
+  [style*="border-left:2px solid #641822;padding-left:28px"]{border-left:0!important;padding-left:0!important;border-top:2px solid #641822;padding-top:24px!important}
+  [style*="font-size:18px;line-height:1.6"]{font-size:17px!important}
+}
+@media (max-width:480px){
+
+  [style*="aspect-ratio:516/296"]{flex-basis:100%!important;max-width:100%!important}
+  [style*="min-width:0;max-width:760px"]{flex-basis:100%!important}
+}
+
+.skip{position:absolute;left:12px;top:-60px;background:#641822;color:#F5F3EE!important;padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid #641822;outline-offset:3px;border-radius:2px}
+header{position:relative;z-index:20}
+.burger{display:none}
+@media (max-width:640px){
+  header{flex-wrap:nowrap!important}
+  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:11px 9px;background:none;border:0;cursor:pointer;box-sizing:border-box}
+  .burger span{display:block;height:2px;width:100%;background:#641822;border-radius:2px;transition:transform .2s,opacity .2s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav#site-nav{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:6px 20px 18px!important;background:#F5F3EE;border-bottom:1px solid #D9D2C7;font-size:18px!important;box-shadow:0 12px 24px rgba(100,24,34,.08)}
+  nav#site-nav.open{display:flex!important}
+  nav#site-nav a{display:flex!important;align-items:center;min-height:48px;border-bottom:1px solid #E6E0D4}
+  nav#site-nav a:last-child{border-bottom:0}
+  nav#site-nav a[aria-label="LinkedIn"]::after{display:inline-block;text-decoration:none;content:"LinkedIn";margin-left:12px;font-size:18px;color:#3D2F2A}
+}
+</style>
+<noscript><style>.burger{display:none!important}nav#site-nav{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important}</style></noscript>
+<script src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="position:relative;overflow:hidden"><div style="position:relative;z-index:1;padding-bottom:120px">
+
+<!-- NAV -->
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:18px 40px;border-bottom:1px solid #D9D2C7;box-sizing:border-box">
+  <a href="/" aria-label="Elise L’Hopitault, home" style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#641822;letter-spacing:.01em;text-decoration:none">EL</a>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Main" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 36px;font-size:15px">
+    <a href="/" style="color:#3D2F2A;text-decoration:none">Home</a>
+    <a href="/projects" aria-current="page" style="color:#641822;text-decoration:none;font-weight:700">Projects</a>
+    <a href="/about" style="color:#3D2F2A;text-decoration:none">About me</a>
+    <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">Resume</a>
+    <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex"><svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="LinkedIn"><rect width="26" height="26" rx="4" fill="#3D2F2A"></rect><text x="13" y="19" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#F5F3EE">in</text></svg></a>
+  </nav>
+</header><main id="main">
+
+<!-- BACK + LABEL -->
+<div style="position:relative;display:flex;align-items:center;justify-content:center;padding:34px 40px 0">
+  <a href="/projects" style="position:absolute;left:40px;top:34px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;color:#641822"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5"></path></svg>Back</a>
+  <span style="font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#641822">Portfolio</span>
+</div>
+
+<!-- HERO -->
+<div style="width:100%;max-width:812px;margin:0px auto 0;padding:88px 24px 0;box-sizing:border-box"><h1 style="margin:0;font-family:'Roboto Mono',monospace;font-weight:700;font-size:60px;line-height:1.05;letter-spacing:.03em;color:#641822">GPC 2.0</h1><p style="margin:10px 0 0;font-family:'Roboto Mono',monospace;font-size:16px;letter-spacing:.04em;color:#8B5A61">Executive reporting in Power BI</p><p style="margin:26px 0 0;max-width:520px;font-size:17px;line-height:1.5">A Power BI report that puts the key figures of ENGIE’s business units in the spotlight, and that I helped bring to life from a Figma mock-up.</p></div>
+<!-- HERO IMAGE -->
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0px 24px 0;box-sizing:border-box"><img decoding="async" fetchpriority="high" src="images/gpc-hero.webp" alt="GPC 2.0 report displayed on a tablet." width="2138" height="736" style="display:block;width:100%;height:auto;border-radius:4px"></div>
+<div style="width:100%;max-width:1100px;margin:48px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:28px 40px;padding:28px 0;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7"><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Role</div><div style="font-size:16px;line-height:1.45">Product Designer, Power BI Factory: adapting the design to Power BI, keeping the report maintainable</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Duration</div><div style="font-size:16px;line-height:1.45">Since October 2025, over a year</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Tools</div><div style="font-size:16px;line-height:1.45">Power BI, Figma, Jira</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Context</div><div style="font-size:16px;line-height:1.45">ENGIE, work-study, Power BI Factory team</div></div></div></div>
+<div style="width:100%;max-width:812px;margin:88px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">01 · CONTEXT</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">A report made to expose data</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">GPC 2.0 is a report built to display data, not to modify it. It is used by the Global Business Units (GBUs), the large entities of ENGIE, mostly during their quarterly business reviews (QBR).</p><p style="margin:0 0 18px;font-size:17px;line-height:1.6">The idea is to bring out the key data each GBU wants to show, and to make it easy to use in a presentation.</p></div>
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">02 · MY ROLE</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Making the design work in Power BI</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">When I arrived in October 2025, the mock-up had already been designed by another UX designer, and I was a beginner. My role, within the Power BI Factory team, was to find solutions to adapt the design to Power BI, and to keep the report maintainable.</p><p style="margin:0 0 18px;font-size:17px;line-height:1.6">Some elements of a Figma design cannot be reproduced as they are in Power BI. For each one, I looked for a way to stay as close as possible to the mock-up, while keeping the report simple to maintain.</p></div>
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/gpc-compare.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/gpc-compare.webp" alt="Overview page of GPC 2.0: the Figma design on the left and the Power BI report on the right, with figures blurred." width="1456" height="830" style="display:block;width:100%;height:auto"></a></div><div style="width:100%;max-width:1100px;margin:14px auto 0;padding:0px 24px 0;box-sizing:border-box"><p style="margin:0;font-size:14px;line-height:1.5;color:#8B5A61">The overview page, as designed in Figma and as built in Power BI. Figures are blurred.</p></div>
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">03 · RESULT</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">A report that stays faithful to the mock-up</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">Today the report is very close to the Figma design, which I consider a real success, and the feedback has been very positive.</p></div>
+<div style="width:100%;max-width:1100px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><h2 style="margin:0 0 28px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">What I take away</h2><div style="display:flex;flex-wrap:wrap;gap:20px"><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Adapting a design to a tool starts with knowing the tool’s limits.</p></div><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">A good compromise keeps the purpose of a component, even when its shape changes.</p></div><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">A report that stays close to its mock-up is easier to maintain and to explain.</p></div></div></div>
+<div style="width:100%;max-width:812px;margin:56px auto 0;padding:0px 24px 0;box-sizing:border-box"><p style="margin:0;font-size:14px;line-height:1.6;color:#8B5A61;border-left:2px solid #D9D2C7;padding-left:16px">Figures are blurred and some details are left out, because the report is internal to ENGIE.</p></div>
+<div style="width:100%;max-width:1100px;margin:96px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:14px">Next project</div><a href="/rse" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7;padding:28px 0;text-decoration:none;color:#641822"><div style="flex:1 1 360px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:8px">RSE Environnement</div><div style="font-size:16px;line-height:1.5;max-width:520px">Two redesigns of ENGIE’s climate and environmental risk reports in Power BI.</div></div><span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></span></a></div>
+</main></div></div>
+<!-- CONNECT -->
+<footer style="border-top:1px solid #D9D2C7;background:#F5F3EE;position:relative;z-index:2"><div style="width:100%;max-width:1100px;margin:0 auto;padding:90px 24px 150px;box-sizing:border-box">
+  <h2 style="margin:0 0 34px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">Let’s connect !</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;font-size:17px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M1 5l10 7 10-7v12h-3.5V10L11 15.5 4.5 10v7H1z" fill="#641822"/></svg>
+      <a href="mailto:elise.lhopitault.pro@gmail.com" style="color:#641822">elise.lhopitault.pro@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="3" fill="#641822"/><text x="11" y="16" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="12" fill="#F5F3EE">in</text></svg>
+      <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My Linkedin</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#641822" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h8l5 5v13H5z M13 2v5h5"/></svg>
+      <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My resume</a>
+    </div>
+  </div>
+</div>
+
+
+</footer></div>
+
+</body>
+</html>

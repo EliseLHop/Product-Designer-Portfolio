@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventorias | Elise L’Hopitault</title>
+<meta name="description" content="Eventorias: a no-code prototype that helps English-speaking tourists find an event in Paris, handed off to developers.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F3EE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elise L’Hopitault">
+<meta property="og:title" content="Eventorias | Elise L’Hopitault">
+<meta property="og:description" content="Eventorias: a no-code prototype that helps English-speaking tourists find an event in Paris, handed off to developers.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eventorias | Elise L’Hopitault">
+<meta name="twitter:description" content="Eventorias: a no-code prototype that helps English-speaking tourists find an event in Paris, handed off to developers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23641822'%3EEL%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/roboto-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/roboto-mono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument-sans.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-display-700.woff2) format('woff2')}
+
+body{margin:0;background:#F5F3EE}
+a{color:#641822}a:hover{color:#3D0E15}
+
+
+html{-webkit-text-size-adjust:100%}body{min-height:100vh}.zoom{display:block;cursor:zoom-in}
+@media (max-width:1024px){
+  [style*="padding:11px 50px"]{padding:11px 28px!important}
+  [style*="padding:18px 40px"]{padding:14px 28px!important}
+  nav[style*="gap:8px 52px"],nav[style*="gap:8px 36px"]{gap:8px 28px!important}
+}
+@media (max-width:768px){
+  [style*="padding:11px 50px"],[style*="padding:18px 40px"]{padding:10px 20px!important;gap:8px 12px!important}
+  [style*="padding:0 32px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="padding:0 24px"],[style*="padding:0px 24px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="margin-top:300px"]{margin-top:130px!important}
+  [style*="margin-top:360px"]{margin-top:150px!important}
+  h1[style*="font-size:50px"]{font-size:32px!important}
+  h1[style*="font-size:60px"]{font-size:38px!important}
+  h2[style*="font-size:32px"]{font-size:26px!important}
+  h2[style*="font-size:30px"]{font-size:24px!important}
+  h2[style*="font-size:28px"]{font-size:23px!important}
+  blockquote{font-size:22px!important;padding-left:20px!important}
+  [style*="margin-right:250px"]{margin-right:0!important}
+  [style*="margin:120px auto 0"],[style*="margin:130px auto 0"],[style*="margin:150px auto 0"],[style*="margin:160px auto 0"],[style*="margin:170px auto 0"]{margin-top:72px!important}
+  [style*="margin:88px auto 0"]{margin-top:56px!important}
+  [style*="margin:0px auto 0;padding:88px"]{padding-top:48px!important}
+  [style*="margin:0 0 107px"]{margin-bottom:48px!important}
+  [style*="margin:0 0 70px"]{margin-bottom:36px!important}
+  [style*="padding:90px"]{padding-top:56px!important;padding-bottom:80px!important}
+  [style*="gap:48px 96px"],[style*="gap:40px 96px"],[style*="gap:48px 71px"],[style*="gap:40px 72px"]{gap:36px!important}
+  [style*="border-left:2px solid #641822;padding-left:28px"]{border-left:0!important;padding-left:0!important;border-top:2px solid #641822;padding-top:24px!important}
+  [style*="font-size:18px;line-height:1.6"]{font-size:17px!important}
+}
+@media (max-width:480px){
+
+  [style*="aspect-ratio:516/296"]{flex-basis:100%!important;max-width:100%!important}
+  [style*="min-width:0;max-width:760px"]{flex-basis:100%!important}
+}
+
+.skip{position:absolute;left:12px;top:-60px;background:#641822;color:#F5F3EE!important;padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid #641822;outline-offset:3px;border-radius:2px}
+header{position:relative;z-index:20}
+.burger{display:none}
+@media (max-width:640px){
+  header{flex-wrap:nowrap!important}
+  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:11px 9px;background:none;border:0;cursor:pointer;box-sizing:border-box}
+  .burger span{display:block;height:2px;width:100%;background:#641822;border-radius:2px;transition:transform .2s,opacity .2s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav#site-nav{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:6px 20px 18px!important;background:#F5F3EE;border-bottom:1px solid #D9D2C7;font-size:18px!important;box-shadow:0 12px 24px rgba(100,24,34,.08)}
+  nav#site-nav.open{display:flex!important}
+  nav#site-nav a{display:flex!important;align-items:center;min-height:48px;border-bottom:1px solid #E6E0D4}
+  nav#site-nav a:last-child{border-bottom:0}
+  nav#site-nav a[aria-label="LinkedIn"]::after{display:inline-block;text-decoration:none;content:"LinkedIn";margin-left:12px;font-size:18px;color:#3D2F2A}
+}
+</style>
+<noscript><style>.burger{display:none!important}nav#site-nav{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important}</style></noscript>
+<script src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="position:relative;overflow:hidden"><div style="position:relative;z-index:1;padding-bottom:120px">
+
+<!-- NAV -->
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:18px 40px;border-bottom:1px solid #D9D2C7;box-sizing:border-box">
+  <a href="/" aria-label="Elise L’Hopitault, home" style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#641822;letter-spacing:.01em;text-decoration:none">EL</a>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Main" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 36px;font-size:15px">
+    <a href="/" style="color:#3D2F2A;text-decoration:none">Home</a>
+    <a href="/projects" aria-current="page" style="color:#641822;text-decoration:none;font-weight:700">Projects</a>
+    <a href="/about" style="color:#3D2F2A;text-decoration:none">About me</a>
+    <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">Resume</a>
+    <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex"><svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="LinkedIn"><rect width="26" height="26" rx="4" fill="#3D2F2A"></rect><text x="13" y="19" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#F5F3EE">in</text></svg></a>
+  </nav>
+</header><main id="main">
+
+<!-- BACK + LABEL -->
+<div style="position:relative;display:flex;align-items:center;justify-content:center;padding:34px 40px 0">
+  <a href="/projects" style="position:absolute;left:40px;top:34px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;color:#641822"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5"></path></svg>Back</a>
+  <span style="font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#641822">Portfolio</span>
+</div>
+
+<!-- HERO -->
+<div style="width:100%;max-width:812px;margin:0 auto;padding:88px 24px 0;box-sizing:border-box">
+  <h1 style="margin:0;font-family:'Roboto Mono',monospace;font-weight:700;font-size:60px;line-height:1.05;letter-spacing:.03em;color:#641822">Eventorias</h1>
+  <p style="margin:10px 0 0;font-family:'Roboto Mono',monospace;font-size:16px;letter-spacing:.04em;color:#8B5A61">No-code prototyping and handoff to developers</p>
+  <p style="margin:26px 0 0;max-width:520px;font-size:17px;line-height:1.5">A no-code prototype designed to help English-speaking tourists find an event in Paris, which was tested and then documented for developers.</p>
+  <p style="margin:18px 0 0;font-size:16px"><a href="https://folk-stock-11703238.figma.site/" target="_blank" rel="noopener noreferrer" style="color:#641822;text-decoration:underline;text-underline-offset:3px">Try the Eventorias prototype</a></p>
+</div>
+
+<!-- COVER -->
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0 24px;box-sizing:border-box">
+  <img decoding="async" fetchpriority="high" src="images/eventorias-hero.webp" alt="Eventorias event list on a phone held in a hand." style="display:block;width:100%;height:auto;border-radius:4px">
+</div>
+
+<!-- META BAND -->
+<div style="width:100%;max-width:1100px;margin:48px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:28px 40px;padding:28px 0;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7">
+    <div style="flex:1 1 200px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Role</div>
+      <div style="font-size:16px;line-height:1.45">Product Designer: research watch, no-code prototype, user tests, developer handoff</div>
+    </div>
+    <div style="flex:1 1 140px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Duration</div>
+      <div style="font-size:16px;line-height:1.45">50 hours, July to August 2026</div>
+    </div>
+    <div style="flex:1 1 200px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Tools</div>
+      <div style="font-size:16px;line-height:1.45">Figma Make, Figma, Notion, video calls for the tests</div>
+    </div>
+    <div style="flex:1 1 220px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Context</div>
+      <div style="font-size:16px;line-height:1.45">OpenClassrooms certification project, fictional client, solo</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXT & CHALLENGE -->
+<div style="width:100%;max-width:812px;margin:88px auto 0;padding:0 24px;box-sizing:border-box">
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">Context and challenge</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">Eventorias is a mobile app for English-speaking tourists staying a few days in Paris. They decide quickly, often in the morning for the evening, and the information they need is scattered across websites, social networks and street posters, rarely in English. Nothing tells them upfront whether an event will be accessible to them.</p>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">I joined once the brief, the wireframes and the backlog were set. My mission: turn them into a no-code prototype, test it with real users, then hand it over to the in-house developers.</p>
+  <div style="background:#EDE9E0;border-radius:6px;padding:24px 28px">
+    <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Objective</div>
+    <p style="margin:0;font-size:19px;line-height:1.5;font-weight:500">Help a tourist discover, understand and save an event in a few taps, and give developers everything they need to build it without guessing.</p>
+  </div>
+</div>
+
+<!-- AT A GLANCE -->
+<div style="width:100%;max-width:1100px;margin:72px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">3 verbs</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">Discover, understand, save. The MVP scope fits in three verbs, with an explicit list of what is out.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">2 tests, 3 findings</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">Two opposite profiles, four tasks, about 15 minutes each. One finding was blocking, and it changed the design.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">1 handoff</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">A five-minute guided video and a six-block documentation, with seven screens specified in full.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 01 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family: 'Roboto Mono',monospace; font-size: 14px; letter-spacing: 0.12em; color: #8B5A61; margin-bottom: 12px">01 · UNDERSTAND</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Tourists decide fast, and need the language upfront</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">Before touching the wireframes, I did my watch: eight themes tied to the project (event journeys, mobile patterns, UX states, accessibility) and ten broader ones for the craft. Four apps were studied in detail, and each one changed something in the prototype.</p>
+  <ul style="margin:0 0 18px;padding-left:22px;font-size:17px;line-height:1.6">
+    <li style="margin-bottom:8px"><strong>GetYourGuide</strong> ranks language with price in its filters, so language became a first-level filter.</li>
+    <li style="margin-bottom:8px"><strong>Klook</strong> opens filters in a bottom sheet over the list, a pattern I kept as is.</li>
+    <li style="margin-bottom:8px"><strong>Airbnb</strong> confirms the calendar addition and keeps the host visible, hence our confirmation toast and organizer avatar.</li>
+    <li><strong>Time Out</strong> organizes filters as what, where, when, a grid I used to structure ours.</li>
+  </ul>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">Then I turned the given wireframes into a prototype, adding what they were missing.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/06_wireframe-to-prototype.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/06_wireframe-to-prototype.webp" alt="Wireframes given (top row) vs. my prototype (bottom row): list, details, creation, profile." style="display:block;width:100%;height:auto;border-radius:4px"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">Wireframes from the brief vs. the prototype. Added: search and category chips, the missing primary action on the details page, required-field markers, and profile shortcuts.</p>
+</div>
+
+<!-- CHAPTER 02 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">02 · DESIGN</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">One screen to decide, one action to save</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">The main journey fits in four steps: browse the list (search, category, then date, price and language, all combinable), open an event, save it to a calendar, and, for organizers, publish. Browsing never requires an account: sign-in only appears at the moment of saving, and brings you back to the event you were reading.</p>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">There are three roles: a visitor who can read everything, a signed-in user who can save and manage events, and a verified organizer, the only one allowed to publish.</p>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">One rule drove the details page: date, time, language, category and price must be visible without scrolling. It is a constraint, not a layout preference.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/01_main-journey.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/01_main-journey.webp" alt="The main journey in four screens: sign in, discover, understand, save." style="display:block;width:100%;height:auto;border-radius:4px"></a>
+  <p style="margin:14px 0 56px;font-size:14px;line-height:1.5;color:#8B5A61">Main journey, tested version. “Browse without an account” keeps discovery open.</p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:32px 40px;align-items:flex-start">
+    <figure style="flex:460 1 240px;min-width:0;margin:0">
+      <a href="images/02_event-list-annotated.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/02_event-list-annotated.webp" alt="The current event list screen." style="display:block;width:100%;height:auto"></a>
+      <figcaption style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">The list: everything needed to scan before opening anything, with language as a first-class piece of information.</figcaption>
+    </figure>
+    <figure style="flex:900 1 320px;min-width:0;margin:0">
+      <a href="images/03_event-details-annotated.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/03_event-details-annotated.webp" alt="The event details screen, at the top and scrolled down." style="display:block;width:100%;height:auto"></a>
+      <figcaption style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">The details page: key facts first, one primary action pinned at the bottom.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!-- CHAPTER 03 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">03 · PROTOTYPE</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Prototyping the moments where people hesitate</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">I chose a no-code prototype over static mockups because I wanted to watch people navigate, not comment on images. Built in Figma Make, it opens on a phone with no install, and it has real states: an empty list, form errors, bottom sheets. These are the moments where people hesitate. Twelve iterations led to the tested version, and two more followed.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/05_states-and-rules.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/05_states-and-rules.webp" alt="Four screens: empty states, a confirmation toast, status badge and form rules." style="display:block;width:100%;height:auto;border-radius:4px"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">States and business rules. An empty list always offers a way out, and never uses red: it is not an error.</p>
+</div>
+<div style="width:100%;max-width:812px;margin:48px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 300px;min-width:0;background:#EDE9E0;border-radius:6px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:12px">What it proves</div>
+      <ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.55">
+        <li>Navigation</li>
+        <li>Information hierarchy</li>
+        <li>Understanding of an event page</li>
+        <li>Empty states</li>
+      </ul>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;background:#EDE9E0;border-radius:6px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:12px">What it does not</div>
+      <ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.55">
+        <li>Real data: 12 hard-coded events, no API</li>
+        <li>Sign-in: simulated with a demo account</li>
+        <li>Calendar export: writes nothing anywhere</li>
+        <li>Loading and network errors: specified, but not observable</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin:20px 0 0;font-size:16px;line-height:1.55">Loading and network-error states are specified in the documentation but cannot be checked in the prototype. They still have to be built.</p>
+</div>
+
+<!-- CHAPTER 04 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">04 · TEST</div>
+  <h2 style="margin: 0 0 24px; font-family: 'Roboto Mono',monospace; font-weight: 700; font-size: 30px; line-height: 1.25; color: #641822">I made the button more visible, then dropped the idea</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">Two participants with opposite habits: one decides fast and navigates on instinct (19, student), the other reads everything and compares (30, data analyst). Four tasks, about 15 minutes each, by video call. They thought aloud, and I observed without helping, even when it got stuck. Especially then.</p>
+
+  <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #D9D2C7">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:22px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:#641822;border-radius:6px;padding:5px 10px;align-self:flex-start;text-align:center">Blocking</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:17px;line-height:1.55">Nobody found the create button. It was on Home, bottom right. Both participants went looking in their profile.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:22px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Friction</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:17px;line-height:1.55">Getting back to Home took several back steps, and the calendar icon was read as “my events”.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:22px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px dashed #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Product risk</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:17px;line-height:1.55">A form filled with random data was published without any check, and the participant asked whether anything was controlled. He was right.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:56px 0 16px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">The decision</h3>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">My first reflex was to make the button more visible. I designed that version, then dropped it: it fixed visibility, while the real problem was where people looked. Making the button louder meant asking users to adapt to my interface.</p>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">So I moved the function to where they already went. Creation now lives in the profile as a full-width button, a Home icon replaces the calendar icon, and only verified organizers can publish, which also answers the missing control on content.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/04_tests-before-after.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/04_tests-before-after.webp" alt="Tested version versus current version: Home with and without the floating plus button, profile without and with the Create a new event button." style="display:block;width:100%;height:auto;border-radius:4px"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">Before and after the tests. The “+” was there; neither participant saw it.</p>
+  
+</div>
+<div style="width:100%;max-width:812px;margin:40px auto 0;padding:0 24px;box-sizing:border-box">
+  <p style="margin:0;font-size:17px;line-height:1.6;font-style:italic">Two participants is not statistics, it is friction detection. Both got stuck at the same place, which was enough to decide.</p>
+</div>
+
+<!-- CHAPTER 05 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">05 · HANDOFF</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">A handoff developers can interrogate</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">The handoff comes in two forms. A five-minute video that reads the documentation with you: where to enter, what is easy to miss. And the documentation itself, in six blocks.</p>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">The sixth block is the one developers will open most: seven screens, each with its content, actions, business rules, states and edge cases. Every screen carries a stable ID (EVT-001, ME-001…) to be reused as is in the code, so that we speak the same language when we debug together.</p>
+</div>
+<div style="width:100%;max-width:812px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="https://app.notion.com/p/Eventorias-App-Passation-aux-d-veloppeurs-0031f2e2c5ba836588b6816cb2f45129?source=copy_link" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7;text-decoration:none;color:#641822;font-weight:600;font-size:16px;min-height:44px;box-sizing:border-box">Developer handoff documentation (Notion)<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
+</div>
+<div style="width:100%;max-width:812px;margin:48px auto 0;padding:0 24px;box-sizing:border-box">
+  <h3 style="margin:0 0 20px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">Four points of vigilance, by severity</h3>
+  <div style="display:flex;flex-direction:column;border-top:1px solid #D9D2C7">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:#641822;border-radius:6px;padding:5px 10px;align-self:flex-start;text-align:center">Critical</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Access control.</strong> Hiding the create button is not enough: the screen must be unreachable for a non-verified account, checked server-side.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Important</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Form validation.</strong> Today it only checks that a value exists. Format and maximum lengths are needed.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Important</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Loading and network errors.</strong> They must exist even though the prototype cannot show them.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Important</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>English only.</strong> The interface is in English without exception, error messages included. The exact texts are in the documentation.</p>
+    </div>
+  </div>
+  <p style="margin:28px 0 0;font-size:17px;line-height:1.6"><strong>Left open on purpose:</strong> how to become a verified organizer is neither designed nor specified. It is out of the MVP, so I flagged it instead of inventing it.</p>
+</div>
+
+<!-- TAKEAWAYS -->
+<div style="width:100%;max-width:1100px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <h2 style="margin:0 0 28px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">What I take away</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Decisions come from observation, not from taste.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">The “out” list matters as much as the “in” list.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">If something is not decided in the documentation, raise it, do not guess it.</p>
+    </div>
+  </div>
+  <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+    <a href="https://folk-stock-11703238.figma.site/" style="display:inline-flex;align-items:center;gap:10px;background:#641822;color:#F5F3EE;text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:8px;min-height:44px;box-sizing:border-box">Open the prototype<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#F5F3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
+    
+  </div>
+</div>
+
+<!-- NEXT PROJECT -->
+<div style="width:100%;max-width:1100px;margin:96px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:14px">Next project</div>
+  <a href="/flowrate" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7;padding:28px 0;text-decoration:none;color:#641822">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:8px">Flowrate</div>
+      <div style="font-size:16px;line-height:1.5;max-width:520px">Understanding why 86% of users drop out of the onboarding process, and a four-month plan to address the issue.</div>
+    </div>
+    <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></span>
+  </a>
+</div>
+
+</main></div></div>
+<!-- CONNECT -->
+<footer style="border-top:1px solid #D9D2C7;background:#F5F3EE;position:relative;z-index:2"><div style="width:100%;max-width:1100px;margin:0 auto;padding:90px 24px 150px;box-sizing:border-box">
+  <h2 style="margin:0 0 34px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">Let’s connect !</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;font-size:17px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M1 5l10 7 10-7v12h-3.5V10L11 15.5 4.5 10v7H1z" fill="#641822"></path></svg>
+      <a href="mailto:elise.lhopitault.pro@gmail.com" style="color:#641822">elise.lhopitault.pro@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="3" fill="#641822"></rect><text x="11" y="16" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="12" fill="#F5F3EE">in</text></svg>
+      <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My Linkedin</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#641822" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h8l5 5v13H5z M13 2v5h5"></path></svg>
+      <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My resume</a>
+    </div>
+  </div>
+</div>
+
+</footer></div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les bambinets | Elise L’Hopitault</title>
+<meta name="description" content="Les bambinets: a visual identity, an accessible design system and a clickable prototype of a sign language app for young children.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F3EE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elise L’Hopitault">
+<meta property="og:title" content="Les bambinets | Elise L’Hopitault">
+<meta property="og:description" content="Les bambinets: a visual identity, an accessible design system and a clickable prototype of a sign language app for young children.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Les bambinets | Elise L’Hopitault">
+<meta name="twitter:description" content="Les bambinets: a visual identity, an accessible design system and a clickable prototype of a sign language app for young children.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23641822'%3EEL%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/roboto-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/roboto-mono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument-sans.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-display-700.woff2) format('woff2')}
+
+body{margin:0;background:#F5F3EE}
+a{color:#641822}a:hover{color:#3D0E15}
+
+
+html{-webkit-text-size-adjust:100%}body{min-height:100vh}.zoom{display:block;cursor:zoom-in}
+@media (max-width:1024px){
+  [style*="padding:11px 50px"]{padding:11px 28px!important}
+  [style*="padding:18px 40px"]{padding:14px 28px!important}
+  nav[style*="gap:8px 52px"],nav[style*="gap:8px 36px"]{gap:8px 28px!important}
+}
+@media (max-width:768px){
+  [style*="padding:11px 50px"],[style*="padding:18px 40px"]{padding:10px 20px!important;gap:8px 12px!important}
+  [style*="padding:0 32px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="padding:0 24px"],[style*="padding:0px 24px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="margin-top:300px"]{margin-top:130px!important}
+  [style*="margin-top:360px"]{margin-top:150px!important}
+  h1[style*="font-size:50px"]{font-size:32px!important}
+  h1[style*="font-size:60px"]{font-size:38px!important}
+  h2[style*="font-size:32px"]{font-size:26px!important}
+  h2[style*="font-size:30px"]{font-size:24px!important}
+  h2[style*="font-size:28px"]{font-size:23px!important}
+  blockquote{font-size:22px!important;padding-left:20px!important}
+  [style*="margin-right:250px"]{margin-right:0!important}
+  [style*="margin:120px auto 0"],[style*="margin:130px auto 0"],[style*="margin:150px auto 0"],[style*="margin:160px auto 0"],[style*="margin:170px auto 0"]{margin-top:72px!important}
+  [style*="margin:88px auto 0"]{margin-top:56px!important}
+  [style*="margin:0px auto 0;padding:88px"]{padding-top:48px!important}
+  [style*="margin:0 0 107px"]{margin-bottom:48px!important}
+  [style*="margin:0 0 70px"]{margin-bottom:36px!important}
+  [style*="padding:90px"]{padding-top:56px!important;padding-bottom:80px!important}
+  [style*="gap:48px 96px"],[style*="gap:40px 96px"],[style*="gap:48px 71px"],[style*="gap:40px 72px"]{gap:36px!important}
+  [style*="border-left:2px solid #641822;padding-left:28px"]{border-left:0!important;padding-left:0!important;border-top:2px solid #641822;padding-top:24px!important}
+  [style*="font-size:18px;line-height:1.6"]{font-size:17px!important}
+}
+@media (max-width:480px){
+
+  [style*="aspect-ratio:516/296"]{flex-basis:100%!important;max-width:100%!important}
+  [style*="min-width:0;max-width:760px"]{flex-basis:100%!important}
+}
+
+.skip{position:absolute;left:12px;top:-60px;background:#641822;color:#F5F3EE!important;padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid #641822;outline-offset:3px;border-radius:2px}
+header{position:relative;z-index:20}
+.burger{display:none}
+@media (max-width:640px){
+  header{flex-wrap:nowrap!important}
+  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:11px 9px;background:none;border:0;cursor:pointer;box-sizing:border-box}
+  .burger span{display:block;height:2px;width:100%;background:#641822;border-radius:2px;transition:transform .2s,opacity .2s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav#site-nav{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:6px 20px 18px!important;background:#F5F3EE;border-bottom:1px solid #D9D2C7;font-size:18px!important;box-shadow:0 12px 24px rgba(100,24,34,.08)}
+  nav#site-nav.open{display:flex!important}
+  nav#site-nav a{display:flex!important;align-items:center;min-height:48px;border-bottom:1px solid #E6E0D4}
+  nav#site-nav a:last-child{border-bottom:0}
+  nav#site-nav a[aria-label="LinkedIn"]::after{display:inline-block;text-decoration:none;content:"LinkedIn";margin-left:12px;font-size:18px;color:#3D2F2A}
+}
+</style>
+<noscript><style>.burger{display:none!important}nav#site-nav{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important}</style></noscript>
+<script src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="position:relative;overflow:hidden"><div style="position:relative;z-index:1;padding-bottom:120px">
+
+<!-- NAV -->
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:18px 40px;border-bottom:1px solid #D9D2C7;box-sizing:border-box">
+  <a href="/" aria-label="Elise L’Hopitault, home" style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#641822;letter-spacing:.01em;text-decoration:none">EL</a>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Main" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 36px;font-size:15px">
+    <a href="/" style="color:#3D2F2A;text-decoration:none">Home</a>
+    <a href="/projects" aria-current="page" style="color:#641822;text-decoration:none;font-weight:700">Projects</a>
+    <a href="/about" style="color:#3D2F2A;text-decoration:none">About me</a>
+    <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">Resume</a>
+    <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex"><svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="LinkedIn"><rect width="26" height="26" rx="4" fill="#3D2F2A"></rect><text x="13" y="19" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#F5F3EE">in</text></svg></a>
+  </nav>
+</header><main id="main">
+
+<!-- BACK + LABEL -->
+<div style="position:relative;display:flex;align-items:center;justify-content:center;padding:34px 40px 0">
+  <a href="/projects" style="position:absolute;left:40px;top:34px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;color:#641822"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5"></path></svg>Back</a>
+  <span style="font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#641822">Portfolio</span>
+</div>
+
+<!-- HERO -->
+<div style="width:100%;max-width:812px;margin:0px auto 0;padding:88px 24px 0;box-sizing:border-box"><h1 style="margin:0;font-family:'Roboto Mono',monospace;font-weight:700;font-size:60px;line-height:1.05;letter-spacing:.03em;color:#641822">Les bambinets</h1><p style="margin:10px 0 0;font-family:'Roboto Mono',monospace;font-size:16px;letter-spacing:.04em;color:#8B5A61">Visual identity, accessible design system and prototype</p><p style="margin:26px 0 0;max-width:520px;font-size:17px;line-height:1.5">A visual identity, an accessible design system and a clickable prototype for a sign language app for young children, built on top of existing wireframes.</p></div>
+<!-- COVER -->
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0px 24px 0;box-sizing:border-box"><img decoding="async" fetchpriority="high" src="images/bambinets-hero.webp" alt="Les bambinets app home screen on a phone held in a hand." style="display:block;width:100%;height:auto;border-radius:4px"></div>
+<!-- META -->
+<div style="width:100%;max-width:1100px;margin:48px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:28px 40px;padding:28px 0;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7"><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Role</div><div style="font-size:16px;line-height:1.45">Product Designer: wireframe analysis, user flow, moodboard, style guide, design system, prototype</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Duration</div><div style="font-size:16px;line-height:1.45">50 hours, April to May 2026</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Tools</div><div style="font-size:16px;line-height:1.45">Figma, FigJam, shadcn/ui, Stark (contrast checks)</div></div><div style="flex:1 1 200px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Context</div><div style="font-size:16px;line-height:1.45">OpenClassrooms certification project, fictional client (a nursery), solo</div></div></div></div>
+<!-- CONTEXT -->
+<div style="width:100%;max-width:812px;margin:88px auto 0;padding:0px 24px 0;box-sizing:border-box"><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">Context and challenge</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">Les Bambinets is an innovative nursery that wants a mobile app to help parents and early-childhood professionals communicate with toddlers through sign language. The client had no visual identity yet, only a logo.</p><p style="margin:0 0 18px;font-size:17px;line-height:1.6">Their wish list: a glossary of about twenty signs, sorted alphabetically and by category (essential, emotions, leisure, nature), a favorites feature with a heart icon, videos to show the gestures, micro-quizzes, and a clear FAQ for adults.</p><p style="margin:0 0 32px;font-size:17px;line-height:1.6">A User Researcher colleague had already produced wireframes and tested them. My mission: use them as a base to define the look and feel, build the design system, and go all the way to an interactive prototype.</p><div style="background:#EDE9E0;border-radius:6px;padding:24px 28px"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Objective</div><p style="margin:0;font-size:19px;line-height:1.5;font-weight:500">A look that is soft and warm for toddlers, clear and readable for parents and professionals, and a design system that keeps every screen consistent and accessible.</p></div></div>
+<!-- AT A GLANCE -->
+<div style="width:100%;max-width:1100px;margin:72px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:20px"><div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px"><div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">6 screens, 6 grey areas</div><p style="margin:0;font-size:16px;line-height:1.5">Home, glossary, details, quiz, FAQ, favorites: each one analyzed, with the open questions listed before any design.</p></div><div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px"><div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">6 flows</div><p style="margin:0;font-size:16px;line-height:1.5">One main path and five secondary ones (quiz, FAQ, favorites, filtering, empty state), all clickable.</p></div><div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px"><div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">AA and 44 px</div><p style="margin:0;font-size:16px;line-height:1.5">Contrast checked at AA level, touch targets of at least 44 by 44 px, visible keyboard focus.</p></div></div></div>
+<!-- 01 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">01 · ANALYZE</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Tested wireframes are a base, not a verdict</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">I went through the six wireframes one by one: role of the screen, elements, strengths, and what was unclear. I also listed the components that come back on several screens, since they would become the core of the design system: tab bar, primary button, search bar, sign card, heart icon, quiz answer button, video player, filter chip, FAQ item.</p><p style="margin:0 0 10px;font-size:17px;line-height:1.6">Some grey areas needed a decision before drawing anything:</p><ul style="margin:0 0 18px;padding-left:22px;font-size:17px;line-height:1.6"><li style="margin-bottom:8px">The quiz offers five answers, too many for a mobile screen: I planned three or four, plus a results screen that did not exist.</li><li style="margin-bottom:8px">The heart (favorite) was missing on glossary cards and on the details page, exactly where people want to save a sign.</li><li style="margin-bottom:8px">The FAQ icons were not standard: I chose an accordion and clarified the actions.</li><li style="margin-bottom:8px">Favorites had no empty state, so I added one with an invitation to explore the signs.</li></ul></div>
+
+<!-- 02 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">02 · MAP</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Every path drawn before any screen</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">I built the user flow in FigJam: one main path (home, glossary, sign details, favorites) and five secondary flows. Each screen is a block, each arrow carries the user action, and no path is cut or forgotten.</p><ul style="margin:0 0 18px;padding-left:22px;font-size:17px;line-height:1.6"><li style="margin-bottom:8px"><strong>A, Quiz:</strong> watch the video, pick an answer, submit, see the score, start again.</li><li style="margin-bottom:8px"><strong>B, FAQ:</strong> open a question, the accordion unfolds, go back.</li><li style="margin-bottom:8px"><strong>C, Favorite:</strong> tap the heart, it fills, the sign joins the favorites.</li><li style="margin-bottom:8px"><strong>D, Filter:</strong> choose a category chip, the list narrows, open a sign.</li><li style="margin-bottom:8px"><strong>E, Empty favorites:</strong> illustration and message, then a way back to the glossary.</li></ul></div>
+<div style="width:100%;max-width:1100px;margin:32px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/bambinets-user-flow.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/bambinets-user-flow.webp" alt="FigJam user flow: the main path from start to end, then the quiz and FAQ flows below." width="2912" height="1040" style="display:block;width:100%;height:auto;border-radius:4px"></a><p style="margin:14px 0 0px;font-size:14px;line-height:1.5;color:#8B5A61">User flow in FigJam. Yellow for start and end, purple for screens, blue for actions.</p></div>
+<!-- 03 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">03 · DEFINE</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">A soft look for toddlers, a clear one for adults</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">The moodboard is built on the client’s only asset, the bee and coral logo. It is organized in sections (colors, typography, UI, illustrations, iconography), and each inspiration comes with a comment explaining why it serves toddlers, parents or professionals.</p><ul style="margin:0 0 18px;padding-left:22px;font-size:17px;line-height:1.6"><li style="margin-bottom:8px"><strong>Palette:</strong> primary, secondary, neutral and accent colors, all checked at AA contrast with a plugin.</li><li style="margin-bottom:8px"><strong>Typography:</strong> Nunito for titles, Inter for text, with body text of at least 16 px for mobile.</li><li style="margin-bottom:8px"><strong>Illustrations:</strong> flat and pastel, with recommended ratios.</li><li style="margin-bottom:8px"><strong>Icons:</strong> a single family, one stroke weight, rounded.</li></ul></div>
+<div style="width:100%;max-width:1100px;margin:32px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/bambinets-moodboard.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/bambinets-moodboard.webp" alt="Moodboard of the Les bambinets app: colour palette, typography, visual elements and mood keywords." width="1461" height="805" style="display:block;width:100%;height:auto;border-radius:4px"></a><p style="margin:14px 0 0px;font-size:14px;line-height:1.5;color:#8B5A61">Moodboard. Every inspiration is commented, so the client can validate the direction before anything is built.</p></div>
+<!-- 04 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">04 · BUILD</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">A design system where every state is documented</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">The style guide fixes the rules: colors with HEX codes, text styles from H1 to Caption, icons and illustrations. The design system then turns them into reusable components, starting from shadcn/ui and customized with the Bambinets identity.</p><ul style="margin:0 0 18px;padding-left:22px;font-size:17px;line-height:1.6"><li style="margin-bottom:8px"><strong>Buttons:</strong> default, hover, pressed, disabled.</li><li style="margin-bottom:8px"><strong>Inputs:</strong> default, focus, error.</li><li style="margin-bottom:8px"><strong>Sign card:</strong> empty heart or filled heart.</li><li style="margin-bottom:8px"><strong>Navigation:</strong> active and inactive tabs.</li></ul><p style="margin:0;font-size:17px;line-height:1.6">Components are named consistently (for example <code style="font-family:'Roboto Mono',monospace;font-size:15px">Button/Primary/Large</code>), and the unclear usages are documented directly in the Figma file, such as when to use a primary or a secondary button.</p></div>
+<div style="width:100%;max-width:1100px;margin:32px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/bambinets-design-system.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/bambinets-design-system.webp" alt="Les bambinets logo, colour palette, typography and sample components: buttons, chips and inputs." width="1456" height="640" style="display:block;width:100%;height:auto;border-radius:4px"></a><p style="margin:14px 0 0px;font-size:14px;line-height:1.5;color:#8B5A61">Style guide and components, with variants and states.</p></div>
+<div style="width:100%;max-width:1100px;margin:24px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><a href="https://www.figma.com/design/ozEQ61BCaW73GACD1ZwWEE/Les-Bambinet---Library?node-id=0-748" style="display:inline-flex;align-items:center;gap:10px;background:#641822;color:#F5F3EE;text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:8px;min-height:44px;box-sizing:border-box">Open the style guide and design system<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#F5F3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a></div></div>
+<!-- 05 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">05 · PROTOTYPE</div><h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Six flows you can click through</h2><p style="margin:0 0 18px;font-size:17px;line-height:1.6">The high-fidelity screens are linked into a Figma prototype that covers every flow of the user flow. The interactions that matter are simulated: the heart fills, quiz answers get selected, inputs show focus and error states, and the quiz gives green or red feedback. Simple animations keep the navigation smooth.</p><p style="margin:0 0 0px;font-size:17px;line-height:1.6">Dynamic zones are annotated (video playing on tap, quiz feedback, validation messages), and I replayed every flow to make sure no link was broken.</p></div>
+<div style="width:100%;max-width:1100px;margin:32px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/bambinets-prototype.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/bambinets-prototype.webp" alt="The six screens of the Les bambinets prototype: home, glossary, sign details, quiz, FAQ and favorites." width="1456" height="640" style="display:block;width:100%;height:auto;border-radius:4px"></a><p style="margin:14px 0 0px;font-size:14px;line-height:1.5;color:#8B5A61">The six screens of the prototype: home, glossary, sign details, quiz, FAQ and favorites.</p></div>
+<div style="width:100%;max-width:1100px;margin:24px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center"><a href="https://www.figma.com/design/6PgZ4c8On0ypMjXXFkDSMi/Les-Bambinets---Maquette-Prototype?node-id=4017-2" style="display:inline-flex;align-items:center;gap:10px;background:#641822;color:#F5F3EE;text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:8px;min-height:44px;box-sizing:border-box">Open the prototype<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#F5F3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a></div></div>
+<!-- ACCESSIBILITY -->
+<div style="width:100%;max-width:812px;margin:72px auto 0;padding:0px 24px 0;box-sizing:border-box"><h3 style="margin:0 0 20px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">Accessibility checks on every screen</h3><div style="display:flex;flex-direction:column;border-top:1px solid #D9D2C7"><div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7"><span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:#641822;padding:5px 10px;border-radius:6px;align-self:flex-start;text-align:center">Contrast</span><p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>AA level.</strong> Key color pairs checked with Stark, on the palette and on each screen.</p></div><div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7"><span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;padding:4px 10px;border-radius:6px;align-self:flex-start;text-align:center">Touch</span><p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>44 by 44 px.</strong> Minimum size for every tappable element, for small hands and hurried parents.</p></div><div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7"><span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;padding:4px 10px;border-radius:6px;align-self:flex-start;text-align:center">Keyboard</span><p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Visible focus.</strong> Focus is visible on all interactive elements.</p></div></div><p style="margin:28px 0 0;font-size:17px;line-height:1.6"><strong>What was hardest:</strong> checking contrast and touch targets screen by screen. It is the point I want to go deeper on.</p></div>
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0px 24px 0;box-sizing:border-box"><a href="images/bambinets-accessibility.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/bambinets-accessibility.webp" alt="Glossary screen checked for accessibility: WCAG contrast ratio of titles, chips, icons, descriptions and navigation, with 44 by 44 pixel touch targets outlined." width="1600" height="2000" style="display:block;width:100%;max-width:720px;height:auto;margin:0 auto"></a><p style="margin:14px auto 0;max-width:720px;font-size:14px;line-height:1.5;color:#8B5A61">The Glossary screen checked for contrast and touch targets. Descriptions in grey sit under the AA threshold, which is the kind of finding this check is for.</p></div>
+<!-- TAKEAWAYS -->
+<div style="width:100%;max-width:1100px;margin:120px auto 0;padding:0px 24px 0;box-sizing:border-box"><h2 style="margin:0 0 28px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">What I take away</h2><div style="display:flex;flex-wrap:wrap;gap:20px"><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Tested wireframes still hide decisions: list the grey areas before designing.</p></div><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">A moodboard with a comment on each inspiration keeps the visual choices justified.</p></div><div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px"><p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Accessibility checks belong in the components, so every screen inherits them.</p></div></div></div>
+<!-- NEXT PROJECT -->
+<div style="width:100%;max-width:1100px;margin:96px auto 0;padding:0px 24px 0;box-sizing:border-box"><div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:14px">Next project</div><a href="/eventorias" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7;padding:28px 0;text-decoration:none;color:#641822"><div style="flex:1 1 360px;min-width:0"><div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:8px">Eventorias</div><div style="font-size:16px;line-height:1.5;max-width:520px">A “no-code” prototype that helps English-speaking tourists find an event in Paris.</div></div><span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></span></a></div>
+</main></div></div>
+<!-- CONNECT -->
+<footer style="border-top:1px solid #D9D2C7;background:#F5F3EE;position:relative;z-index:2"><div style="width:100%;max-width:1100px;margin:0 auto;padding:90px 24px 150px;box-sizing:border-box">
+  <h2 style="margin:0 0 34px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">Let’s connect !</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;font-size:17px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M1 5l10 7 10-7v12h-3.5V10L11 15.5 4.5 10v7H1z" fill="#641822"></path></svg>
+      <a href="mailto:elise.lhopitault.pro@gmail.com" style="color:#641822">elise.lhopitault.pro@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="3" fill="#641822"></rect><text x="11" y="16" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="12" fill="#F5F3EE">in</text></svg>
+      <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My Linkedin</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#641822" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h8l5 5v13H5z M13 2v5h5"></path></svg>
+      <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My resume</a>
+    </div>
+  </div>
+</div>
+
+
+</footer></div>
+
+</body>
+</html>

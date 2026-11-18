@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowrate UX audit | Elise L’Hopitault</title>
+<meta name="description" content="Flowrate UX audit: why 86% of users drop out of onboarding, and a four-month roadmap to fix it.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F5F3EE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elise L’Hopitault">
+<meta property="og:title" content="Flowrate UX audit | Elise L’Hopitault">
+<meta property="og:description" content="Flowrate UX audit: why 86% of users drop out of onboarding, and a four-month roadmap to fix it.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flowrate UX audit | Elise L’Hopitault">
+<meta name="twitter:description" content="Flowrate UX audit: why 86% of users drop out of onboarding, and a four-month roadmap to fix it.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23F5F3EE'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='30' fill='%23641822'%3EEL%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="/fonts/roboto-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/roboto-mono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument-sans.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-display-700.woff2) format('woff2')}
+
+body{margin:0;background:#F5F3EE}
+a{color:#641822}a:hover{color:#3D0E15}
+
+
+html{-webkit-text-size-adjust:100%}body{min-height:100vh}.zoom{display:block;cursor:zoom-in}
+@media (max-width:1024px){
+  [style*="padding:11px 50px"]{padding:11px 28px!important}
+  [style*="padding:18px 40px"]{padding:14px 28px!important}
+  nav[style*="gap:8px 52px"],nav[style*="gap:8px 36px"]{gap:8px 28px!important}
+}
+@media (max-width:768px){
+  [style*="padding:11px 50px"],[style*="padding:18px 40px"]{padding:10px 20px!important;gap:8px 12px!important}
+  [style*="padding:0 32px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="padding:0 24px"],[style*="padding:0px 24px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="margin-top:300px"]{margin-top:130px!important}
+  [style*="margin-top:360px"]{margin-top:150px!important}
+  h1[style*="font-size:50px"]{font-size:32px!important}
+  h1[style*="font-size:60px"]{font-size:38px!important}
+  h2[style*="font-size:32px"]{font-size:26px!important}
+  h2[style*="font-size:30px"]{font-size:24px!important}
+  h2[style*="font-size:28px"]{font-size:23px!important}
+  blockquote{font-size:22px!important;padding-left:20px!important}
+  [style*="margin-right:250px"]{margin-right:0!important}
+  [style*="margin:120px auto 0"],[style*="margin:130px auto 0"],[style*="margin:150px auto 0"],[style*="margin:160px auto 0"],[style*="margin:170px auto 0"]{margin-top:72px!important}
+  [style*="margin:88px auto 0"]{margin-top:56px!important}
+  [style*="margin:0px auto 0;padding:88px"]{padding-top:48px!important}
+  [style*="margin:0 0 107px"]{margin-bottom:48px!important}
+  [style*="margin:0 0 70px"]{margin-bottom:36px!important}
+  [style*="padding:90px"]{padding-top:56px!important;padding-bottom:80px!important}
+  [style*="gap:48px 96px"],[style*="gap:40px 96px"],[style*="gap:48px 71px"],[style*="gap:40px 72px"]{gap:36px!important}
+  [style*="border-left:2px solid #641822;padding-left:28px"]{border-left:0!important;padding-left:0!important;border-top:2px solid #641822;padding-top:24px!important}
+  [style*="font-size:18px;line-height:1.6"]{font-size:17px!important}
+}
+@media (max-width:480px){
+
+  [style*="aspect-ratio:516/296"]{flex-basis:100%!important;max-width:100%!important}
+  [style*="min-width:0;max-width:760px"]{flex-basis:100%!important}
+}
+
+.skip{position:absolute;left:12px;top:-60px;background:#641822;color:#F5F3EE!important;padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid #641822;outline-offset:3px;border-radius:2px}
+header{position:relative;z-index:20}
+.burger{display:none}
+@media (max-width:640px){
+  header{flex-wrap:nowrap!important}
+  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:11px 9px;background:none;border:0;cursor:pointer;box-sizing:border-box}
+  .burger span{display:block;height:2px;width:100%;background:#641822;border-radius:2px;transition:transform .2s,opacity .2s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav#site-nav{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:6px 20px 18px!important;background:#F5F3EE;border-bottom:1px solid #D9D2C7;font-size:18px!important;box-shadow:0 12px 24px rgba(100,24,34,.08)}
+  nav#site-nav.open{display:flex!important}
+  nav#site-nav a{display:flex!important;align-items:center;min-height:48px;border-bottom:1px solid #E6E0D4}
+  nav#site-nav a:last-child{border-bottom:0}
+  nav#site-nav a[aria-label="LinkedIn"]::after{display:inline-block;text-decoration:none;content:"LinkedIn";margin-left:12px;font-size:18px;color:#3D2F2A}
+}
+</style>
+<noscript><style>.burger{display:none!important}nav#site-nav{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important}</style></noscript>
+<script src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="position:relative;overflow:hidden"><div style="position:relative;z-index:1;padding-bottom:120px">
+
+<!-- NAV -->
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:18px 40px;border-bottom:1px solid #D9D2C7;box-sizing:border-box">
+  <a href="/" aria-label="Elise L’Hopitault, home" style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#641822;letter-spacing:.01em;text-decoration:none">EL</a>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Main" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 36px;font-size:15px">
+    <a href="/" style="color:#3D2F2A;text-decoration:none">Home</a>
+    <a href="/projects" aria-current="page" style="color:#641822;text-decoration:none;font-weight:700">Projects</a>
+    <a href="/about" style="color:#3D2F2A;text-decoration:none">About me</a>
+    <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">Resume</a>
+    <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex"><svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="LinkedIn"><rect width="26" height="26" rx="4" fill="#3D2F2A"></rect><text x="13" y="19" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#F5F3EE">in</text></svg></a>
+  </nav>
+</header><main id="main">
+
+<!-- BACK + LABEL -->
+<div style="position:relative;display:flex;align-items:center;justify-content:center;padding:34px 40px 0">
+  <a href="/projects" style="position:absolute;left:40px;top:34px;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;color:#641822"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8H2M7 3L2 8l5 5"></path></svg>Back</a>
+  <span style="font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#641822">Portfolio</span>
+</div>
+
+<!-- HERO -->
+<div style="width:100%;max-width:812px;margin:0 auto;padding:88px 24px 0;box-sizing:border-box">
+  <h1 style="margin:0;font-family:'Roboto Mono',monospace;font-weight:700;font-size:60px;line-height:1.05;letter-spacing:.03em;color:#641822">Flowrate</h1>
+  <p style="margin:10px 0 0;font-family:'Roboto Mono',monospace;font-size:16px;letter-spacing:.04em;color:#8B5A61">UX audit and four-month roadmap</p>
+  <p style="margin:26px 0 0;max-width:520px;font-size:17px;line-height:1.5">Understanding why 86% of users drop out of the onboarding process, and a four-month plan to address the issue.</p>
+  <p style="margin:18px 0 0;font-size:16px"><a href="https://uncut-coffee-66922646.figma.site/" target="_blank" rel="noopener noreferrer" style="color:#641822;text-decoration:underline;text-underline-offset:3px">Visit the audited Flowrate site</a></p>
+</div>
+
+<!-- COVER -->
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0 24px;box-sizing:border-box">
+  <img decoding="async" fetchpriority="high" src="images/flowrate-hero.webp" alt="Flowrate landing page displayed on a laptop." style="display:block;width:100%;height:auto;border-radius:4px">
+</div>
+
+<!-- META BAND -->
+<div style="width:100%;max-width:1100px;margin:48px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:28px 40px;padding:28px 0;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7">
+    <div style="flex:1 1 200px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Role</div>
+      <div style="font-size:16px;line-height:1.45">Junior Product Designer: UX audit, data analysis, product roadmap</div>
+    </div>
+    <div style="flex:1 1 140px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Duration</div>
+      <div style="font-size:16px;line-height:1.45">About 60 hours, June 2026</div>
+    </div>
+    <div style="flex:1 1 200px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Tools</div>
+      <div style="font-size:16px;line-height:1.45">Notion, Nielsen’s 10 heuristics, behavioural analytics data</div>
+    </div>
+    <div style="flex:1 1 220px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Context</div>
+      <div style="font-size:16px;line-height:1.45">OpenClassrooms project, fictional client, solo</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXT & CHALLENGE -->
+<div style="width:100%;max-width:812px;margin:88px auto 0;padding:0 24px;box-sizing:border-box">
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">Context and challenge</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">Flowrate is a B2B time-management SaaS used by more than 5,000 teams. Its landing page converts well, but the four-step onboarding loses almost everyone: only 14% of the users who click “Get started” reach the product. Out of 100 visitors drawn to the free trial, 86 never see it, and can never subscribe.</p>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">Lucas Morel, the Product Manager, asked for a qualitative and quantitative analysis of the journey, then a roadmap to fix it.</p>
+  <div style="background:#EDE9E0;border-radius:6px;padding:24px 28px">
+    <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Objective</div>
+    <p style="margin:0;font-size:19px;line-height:1.5;font-weight:500">Find where and why users drop out, and turn the answer into a prioritised four-month plan.</p>
+  </div>
+</div>
+
+<!-- AT A GLANCE -->
+<div style="width:100%;max-width:1100px;margin:72px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">14% complete</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">Of the users who click “Get started”, 14% finish the onboarding. That is a loss of 86%.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">10 problems</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">Each one crossed between a heuristic and behavioural data, ranked from blocking to minor.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:10px">4 months</div>
+      <p style="margin:0;font-size:16px;line-height:1.5">A roadmap ordered by decreasing criticality, with no arbitrary call.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 01 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">01 · EXPLORE</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">The funnel loses 86 users out of 100 before the product</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">I started with a free exploration of the whole journey, before opening any number: I noted the frictions and wrote my first hypotheses. The onboarding is four pages of single scroll, with no progress indicator.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+    <div style="flex:1 1 170px;min-width:0;border-top:2px solid #641822;padding-top:14px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Step 1</div>
+      <div style="font-weight:600;font-size:16px;margin-bottom:4px">Account creation</div>
+      <div style="font-size:15px;line-height:1.45">13 fields on one page</div>
+    </div>
+    <div style="flex:1 1 170px;min-width:0;border-top:2px solid #641822;padding-top:14px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Step 2</div>
+      <div style="font-weight:600;font-size:16px;margin-bottom:4px">Workspace setup</div>
+      <div style="font-size:15px;line-height:1.45">Irreversible choices imposed</div>
+    </div>
+    <div style="flex:1 1 170px;min-width:0;border-top:2px solid #641822;padding-top:14px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Step 3</div>
+      <div style="font-weight:600;font-size:16px;margin-bottom:4px">Modules</div>
+      <div style="font-size:15px;line-height:1.45">16+ options, in English</div>
+    </div>
+    <div style="flex:1 1 170px;min-width:0;border-top:2px solid #641822;padding-top:14px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Step 4</div>
+      <div style="font-weight:600;font-size:16px;margin-bottom:4px">Training</div>
+      <div style="font-size:15px;line-height:1.45">8 mandatory slides</div>
+    </div>
+  </div>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/flowrate-funnel.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/flowrate-funnel.webp" alt="Onboarding funnel bar chart: 100 users on the landing page, 58 at step 1, 31 at step 2, 21 at step 3, 17 at step 4 and 14 reaching the workspace." width="1456" height="520" style="display:block;width:100%;height:auto"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">The onboarding funnel: 86% of the users who click the call to action never reach the workspace.</p>
+</div>
+
+<!-- CHAPTER 02 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">02 · AUDIT</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">I fixed the severity scale before looking at any number</h2>
+  <p style="margin:0 0 18px;font-size:17px;line-height:1.6">I audited the four steps with Nielsen’s 10 heuristics. Every problem is rated on a four-level scale defined in advance, so that nothing is judged after the fact. Level 1 is the worst, following the convention of Bastien and Scapin.</p>
+  <div style="display:flex;flex-direction:column;border-top:1px solid #D9D2C7;margin-bottom:32px">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:#641822;border-radius:6px;padding:5px 10px;align-self:flex-start;text-align:center">1 · Blocking</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">Stops the user from completing the task or causes massive drop-off. A direct, measurable cause of the funnel loss.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">2 · Major</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">Creates severe friction. Feeds the drop-off without causing it alone.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px dashed #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">3 · Minor</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">Noticeably annoying but does not prevent completion. Affects satisfaction and perception.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex: 0 0 120px; font-family: 'Roboto Mono',monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: #8B5A61; border: 1.5px dotted #8B5A61; border-radius: 6px; padding: 4px 10px; align-self: flex-start; text-align: center; opacity: 1">4 · Cosmetic</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">A finish or consistency flaw with low direct impact. Fixed for general polish.</p>
+    </div>
+  </div>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/flowrate-nielsen.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/flowrate-nielsen.webp" alt="Table of the ten Nielsen heuristics, each with the observation made on Flowrate and its severity from 1 Blocking to 4 Cosmetic." width="1456" height="678" style="display:block;width:100%;height:auto"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">The heuristic analysis, one row per heuristic, rated before any quantitative data was opened.</p>
+</div>
+
+<!-- CHAPTER 03 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">03 · DATA</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Every number compared to a threshold, none read by instinct</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">I did not judge the figures by feel. Each indicator is compared to a reference threshold: a form abandonment becomes critical above 35%, an information step above 10%. The gap to the threshold is what qualifies the journey. Six indicators are in the critical zone.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">46%</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Drop-off at step 1</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">critical above 35%</div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">3 min 42</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Time spent on the form</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">problematic above 3 min</div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">4.6</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Errors per session</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">critical above 3</div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">34%</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Tab switching</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">above 25% = confusion</div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">26%</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Page refreshes</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">above 20% = feels like a bug</div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:22px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;margin-bottom:6px">23%</div>
+      <div style="font-size:16px;font-weight:600;margin-bottom:4px">Clicks on the logo</div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;color:#8B5A61">above 10% = wants to leave</div>
+    </div>
+  </div>
+</div>
+<div style="width:100%;max-width:812px;margin:40px auto 0;padding:0 24px;box-sizing:border-box">
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">A user who refreshes, goes back and clicks the logo is not looking for a feature, they are looking for an exit. These three signals are above their thresholds at the same time: it describes a loss of control, not a simple hesitation.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <a href="images/flowrate-form.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/flowrate-form.webp" alt="Step 1 sign-up form next to the fill rate of each field: name and email 98%, password 91%, company 73%, phone 36%, department 29%, free use case 18%." width="1456" height="560" style="display:block;width:100%;height:auto"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">Fill rate per field. Below 20%, a field does not belong on this step.</p>
+</div>
+
+<!-- CHAPTER 04 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">04 · CROSS</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">The data corrected my intuition</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">I then crossed the two sources. Each problem inherits the severity of its heuristic, confirmed or nuanced by the strength of its data signal. I had written four hypotheses during the free exploration, before seeing any number.</p>
+
+  <div style="display:flex;flex-direction:column;border-top:1px solid #D9D2C7">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 130px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:#641822;border-radius:6px;padding:5px 10px;align-self:flex-start;text-align:center">Confirmed</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>The main drop-off is before the training.</strong> The funnel goes from 100 to 21 users over the first three steps.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 130px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Refined</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>The mandatory training is the final barrier.</strong> It does lose 19% of the remaining users, but far behind the form in absolute volume.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 130px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px dashed #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Overturned</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Missing perceived value is the main driver.</strong> The data point to cognitive load: 46% drop-off and 4.6 errors at step 1, before the question of value even arises.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 130px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#8B5A61;border:1.5px dotted #8B5A61;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Not verifiable</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55"><strong>Those who finish the training retain better.</strong> The data stop at the entrance to the workspace. It would take 7-day and 30-day retention tracking.</p>
+    </div>
+  </div>
+  <p style="margin:28px 0 56px;font-size:17px;line-height:1.6;font-style:italic">My intuition as an auditor pointed to perceived value. The data pointed to cognitive load. That is why a heuristic audit alone is not enough.</p>
+
+  <h3 style="margin:0 0 16px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">The four blocking problems</h3>
+  <p style="margin:0 0 24px;font-size:17px;line-height:1.6">They concentrate the loss and all sit on steps 1, 2 and 4, exactly where the funnel drops the most.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+
+    <div style="flex:1 1 480px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+        <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:18px;line-height:1.3">Overloaded sign-up form</div>
+        <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:12px;font-weight:600;background:#641822;color:#fff;border-radius:6px;padding:4px 8px">H8</span>
+      </div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Audit</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">13 fields on one page, with no visual hierarchy between identity, company and marketing questions.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Data</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">46% drop-off, 3 min 42, 4.6 errors per session.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Recommendation</div>
+      <p style="margin:0;font-size:15px;line-height:1.5;font-weight:600">Keep first name, email and password. Move the rest to a post-sign-up profile.</p>
+    </div>
+
+    <div style="flex:1 1 480px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+        <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:18px;line-height:1.3">Irreversible choices up front</div>
+        <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:12px;font-weight:600;background:#641822;color:#fff;border-radius:6px;padding:4px 8px">H3</span>
+      </div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Audit</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">The workspace name (editable once) and the sub-domain URL (permanent) are imposed before the user has seen anything.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Data</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">31% drop-off on the step, 61% invite nobody.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Recommendation</div>
+      <p style="margin:0;font-size:15px;line-height:1.5;font-weight:600">Lift the irreversibility during the trial, or postpone it after a first real session.</p>
+    </div>
+
+    <div style="flex:1 1 480px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+        <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:18px;line-height:1.3">Mandatory training</div>
+        <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:12px;font-weight:600;background:#641822;color:#fff;border-radius:6px;padding:4px 8px">H10</span>
+      </div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Audit</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">Eight slides of dense text before any access, without one screenshot of the product.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Data</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">19% drop-off, only 34% read everything, about 12 seconds per slide.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Recommendation</div>
+      <p style="margin:0;font-size:15px;line-height:1.5;font-weight:600">Replace it with contextual in-app help, triggered at first use.</p>
+    </div>
+
+    <div style="flex:1 1 480px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px">
+        <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:18px;line-height:1.3">Fake password validation</div>
+        <span style="flex:none;font-family:'Roboto Mono',monospace;font-size:12px;font-weight:600;background:#641822;color:#fff;border-radius:6px;padding:4px 8px">H5</span>
+      </div>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Audit</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">The rules are displayed but never checked: an account can be created with a non-compliant password.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Data</div>
+      <p style="margin:0 0 12px;font-size:15px;line-height:1.5">4.6 errors per session, up to 13. 34% switch tabs while typing.</p>
+      <div style="font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:4px">Recommendation</div>
+      <p style="margin:0;font-size:15px;line-height:1.5;font-weight:600">Real-time validation, with one tick per rule met.</p>
+    </div>
+
+  </div>
+</div>
+<div style="width:100%;max-width:812px;margin:48px auto 0;padding:0 24px;box-sizing:border-box">
+  <h3 style="margin:0 0 16px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">The six others</h3>
+  <div style="display:flex;flex-direction:column;border-top:1px solid #D9D2C7">
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px solid #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Major</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">No progress indicator (H1) · Unguided module selection (H6), with 17% validating in under 30 seconds · Behavioural signals of confusion (H9) · Empty workspace on arrival (H1)</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;padding:18px 0;border-bottom:1px solid #D9D2C7">
+      <span style="flex:0 0 120px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#641822;border:1.5px dashed #641822;border-radius:6px;padding:4px 10px;align-self:flex-start;text-align:center">Minor</span>
+      <p style="flex:1 1 360px;min-width:0;margin:0;font-size:16px;line-height:1.55">Marketing promise vs. reality (H2, H4) · Overwhelming workspace navigation (H7)</p>
+    </div>
+  </div>
+  <p style="margin:24px 0 0;font-size:16px;line-height:1.6">Two calls I made on purpose. The confusion signals are symptoms whose root causes are already treated by the blocking problems. The navigation is minor because its quantitative signal is weak and its impact concerns retention, not the funnel.</p>
+</div>
+
+<!-- CHAPTER 05 -->
+<div style="width:100%;max-width:812px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:14px;letter-spacing:.12em;color:#8B5A61;margin-bottom:12px">05 · ROADMAP</div>
+  <h2 style="margin:0 0 24px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:30px;line-height:1.25;color:#641822">Four months, ordered by criticality, no arbitrary call</h2>
+  <p style="margin:0 0 32px;font-size:17px;line-height:1.6">The crossed criticality is the only prioritisation criterion. Every line of the roadmap goes back to a crossed problem, which goes back to a severity assigned upstream. I presented it as the renovation of a house: strip back first, rebuild brick by brick, finish in the last month.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 230px;min-width:0;border-top:2px solid #641822;padding-top:16px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Month 1 · July</div>
+      <div style="font-weight:700;font-size:16px;margin-bottom:10px">Blocking problems</div>
+      <ul style="margin:0;padding-left:18px;font-size:15px;line-height:1.5">
+        <li>Shrink the form to the essential fields</li>
+        <li>Remove the irreversible choices</li>
+        <li>Replace the mandatory training</li>
+      </ul>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border-top:2px solid #641822;padding-top:16px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Month 2 · August</div>
+      <div style="font-weight:700;font-size:16px;margin-bottom:10px">One blocking, major ones</div>
+      <ul style="margin:0;padding-left:18px;font-size:15px;line-height:1.5">
+        <li>Enforce the password validation</li>
+        <li>Preselect modules by template</li>
+        <li>Confirmation messages and inline help</li>
+      </ul>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border-top:2px solid #641822;padding-top:16px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Month 3 · September</div>
+      <div style="font-weight:700;font-size:16px;margin-bottom:10px">Major problems</div>
+      <ul style="margin:0;padding-left:18px;font-size:15px;line-height:1.5">
+        <li>Progress bar on the four steps</li>
+        <li>Positive empty state in the workspace</li>
+      </ul>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border-top:2px solid #641822;padding-top:16px">
+      <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8B5A61;margin-bottom:6px">Month 4 · October</div>
+      <div style="font-weight:700;font-size:16px;margin-bottom:10px">Minor problems and polish</div>
+      <ul style="margin:0;padding-left:18px;font-size:15px;line-height:1.5">
+        <li>Align the tone with the marketing promise</li>
+        <li>Progressive disclosure of the navigation</li>
+        <li>Harmonise the CTA wording</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin:28px 0 40px;max-width:760px;font-size:16px;line-height:1.6"><strong>Why password validation is in month 2 despite being blocking:</strong> it lives in the sign-up form rebuilt in month 1. Doing it first would have meant doing it twice. It is a technical sequencing, not a downgrade.</p>
+
+  <a href="images/flowrate-roadmap.webp" target="_blank" rel="noopener noreferrer" class="zoom" aria-label="Open the image full size in a new tab"><img decoding="async" loading="lazy" src="images/flowrate-roadmap.webp" alt="Four-month roadmap in a timeline: month 1 form, irreversible choices and training; month 2 password, modules and inline help; month 3 progress bar and empty state; month 4 tone, navigation and CTA wording." width="1456" height="744" style="display:block;width:100%;height:auto"></a>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.5;color:#8B5A61">The four-month roadmap, ordered by decreasing criticality.</p>
+</div>
+<div style="width:100%;max-width:1100px;margin:56px auto 0;padding:0 24px;box-sizing:border-box">
+  <h3 style="margin:0 0 20px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:22px;color:#641822">Expected impact, to track after each phase</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 230px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:20px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:16px;margin-bottom:8px">Conversion</div>
+      <p style="margin:0 0 10px;font-size:15px;line-height:1.5">Today: 14% completion.</p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#8B5A61">Track the completion rate of the funnel.</p>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:20px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:16px;margin-bottom:8px">Fluidity</div>
+      <p style="margin:0 0 10px;font-size:15px;line-height:1.5">Today: 3 min 42 on step 1.</p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#8B5A61">Track the journey time and the refresh rate.</p>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:20px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:16px;margin-bottom:8px">Fewer errors</div>
+      <p style="margin:0 0 10px;font-size:15px;line-height:1.5">Today: 4.6 errors per session.</p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#8B5A61">Track errors per session and browser backs.</p>
+    </div>
+    <div style="flex:1 1 230px;min-width:0;border:1.5px solid #641822;border-radius:8px;padding:20px">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:16px;margin-bottom:8px">Engagement</div>
+      <p style="margin:0 0 10px;font-size:15px;line-height:1.5">Today: an empty workspace on arrival.</p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#8B5A61">Track the first action and the 7-day retention.</p>
+    </div>
+  </div>
+  <p style="margin:28px 0 0;max-width:760px;font-size:16px;line-height:1.6">I recommend taking a checkpoint at the end of each phase, to check that the effect matches the criticality treated, and to adjust the rest of the roadmap if it does not.</p>
+</div>
+
+<!-- LIMITS -->
+<div style="width:100%;max-width:812px;margin:72px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="background:#EDE9E0;border-radius:6px;padding:24px 28px">
+    <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:8px">Limits</div>
+    <p style="margin:0;font-size:17px;line-height:1.55">Nothing was implemented, so the impact on the completion rate could not be measured: this is a training scenario. The audit is an expert analysis backed by behavioural data. It does not replace user tests, which are the logical next step.</p>
+  </div>
+</div>
+
+<!-- TAKEAWAYS -->
+<div style="width:100%;max-width:1100px;margin:120px auto 0;padding:0 24px;box-sizing:border-box">
+  <h2 style="margin:0 0 28px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:28px;color:#641822">What I take away</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:20px">
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Crossing two sources corrected my intuition.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">A good priority is traceable: every roadmap line goes back to a severity set upstream.</p>
+    </div>
+    <div style="flex:1 1 280px;min-width:0;border-top:2px solid #641822;padding-top:18px">
+      <p style="margin:0;font-size:18px;line-height:1.5;font-weight:500">Next time, I want to test my recommendations with real users before locking them.</p>
+    </div>
+  </div>
+  <div style="margin-top:40px;display:flex;flex-direction:column;border-top:1px solid #D9D2C7">
+    <a href="https://app.notion.com/p/Analyse-de-Nielsen-Flowrate-37d1f2e2c5ba8012ab7fc9089e05a0f4" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #D9D2C7;text-decoration:none;color:#641822;font-weight:600;font-size:16px;min-height:44px;box-sizing:border-box">Nielsen and quantitative analysis (Notion)<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
+    <a href="https://app.notion.com/p/e6f1f2e2c5ba825791f501c0c17d2591?v=4e51f2e2c5ba822cbf70883767336c20" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #D9D2C7;text-decoration:none;color:#641822;font-weight:600;font-size:16px;min-height:44px;box-sizing:border-box">UX roadmap (Notion)<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
+    <a href="https://uncut-coffee-66922646.figma.site/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #D9D2C7;text-decoration:none;color:#641822;font-weight:600;font-size:16px;min-height:44px;box-sizing:border-box"><span>Flowrate site, the product analysed</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
+  </div>
+</div>
+
+<!-- NEXT PROJECT -->
+<div style="width:100%;max-width:1100px;margin:96px auto 0;padding:0 24px;box-sizing:border-box">
+  <div style="font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8B5A61;margin-bottom:14px">Next project</div>
+  <a href="/bambinets" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border-top:1px solid #D9D2C7;border-bottom:1px solid #D9D2C7;padding:28px 0;text-decoration:none;color:#641822">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="font-family:'Roboto Mono',monospace;font-weight:700;font-size:26px;margin-bottom:8px">Les bambinets</div>
+      <div style="font-size:16px;line-height:1.5;max-width:520px">A visual identity, an accessible design system, and a prototype sign language app for young children.</div>
+    </div>
+    <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></span>
+  </a>
+</div>
+
+</main></div></div>
+<!-- CONNECT -->
+<footer style="border-top:1px solid #D9D2C7;background:#F5F3EE;position:relative;z-index:2"><div style="width:100%;max-width:1100px;margin:0 auto;padding:90px 24px 150px;box-sizing:border-box">
+  <h2 style="margin:0 0 34px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">Let’s connect !</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;font-size:17px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M1 5l10 7 10-7v12h-3.5V10L11 15.5 4.5 10v7H1z" fill="#641822"></path></svg>
+      <a href="mailto:elise.lhopitault.pro@gmail.com" style="color:#641822">elise.lhopitault.pro@gmail.com</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="22" height="22" rx="3" fill="#641822"></rect><text x="11" y="16" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="12" fill="#F5F3EE">in</text></svg>
+      <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My Linkedin</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#641822" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h8l5 5v13H5z M13 2v5h5"></path></svg>
+      <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">My resume</a>
+    </div>
+  </div>
+</div>
+
+</footer></div>
+
+</body>
+</html>
