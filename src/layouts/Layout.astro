@@ -1,0 +1,100 @@
+---
+// Squelette commun à toutes les pages : <head>, styles, en-tête, pied de page.
+// Le contenu propre à chaque page arrive dans <slot />,
+// et ses balises <title>/<meta> dans <slot name="head" />.
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+interface Props {
+  current: "home" | "projects" | "about";
+  caseStudy?: boolean; // étude de cas : en-tête compact, pied de page étroit
+  padBottom?: number;
+}
+const { current, caseStudy = false, padBottom = 120 } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<slot name="head" />
+<style is:inline>@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/roboto-mono.woff2) format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/instrument-sans.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/playfair-display-700.woff2) format('woff2')}
+
+body{margin:0;background:#F5F3EE}
+a{color:#641822}a:hover{color:#3D0E15}
+
+
+html{-webkit-text-size-adjust:100%}body{min-height:100vh}.zoom{display:block;cursor:zoom-in}
+@media (max-width:1024px){
+  [style*="padding:11px 50px"]{padding:11px 28px!important}
+  [style*="padding:18px 40px"]{padding:14px 28px!important}
+  nav[style*="gap:8px 52px"],nav[style*="gap:8px 36px"]{gap:8px 28px!important}
+}
+@media (max-width:768px){
+  [style*="padding:11px 50px"],[style*="padding:18px 40px"]{padding:10px 20px!important;gap:8px 12px!important}
+  [style*="padding:0 32px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="padding:0 24px"],[style*="padding:0px 24px"]{padding-left:20px!important;padding-right:20px!important}
+  [style*="margin-top:300px"]{margin-top:130px!important}
+  [style*="margin-top:360px"]{margin-top:150px!important}
+  h1[style*="font-size:50px"]{font-size:32px!important}
+  h1[style*="font-size:60px"]{font-size:38px!important}
+  h2[style*="font-size:32px"]{font-size:26px!important}
+  h2[style*="font-size:30px"]{font-size:24px!important}
+  h2[style*="font-size:28px"]{font-size:23px!important}
+  blockquote{font-size:22px!important;padding-left:20px!important}
+  [style*="margin-right:250px"]{margin-right:0!important}
+  [style*="margin:120px auto 0"],[style*="margin:130px auto 0"],[style*="margin:150px auto 0"],[style*="margin:160px auto 0"],[style*="margin:170px auto 0"]{margin-top:72px!important}
+  [style*="margin:88px auto 0"]{margin-top:56px!important}
+  [style*="margin:0px auto 0;padding:88px"]{padding-top:48px!important}
+  [style*="margin:0 0 107px"]{margin-bottom:48px!important}
+  [style*="margin:0 0 70px"]{margin-bottom:36px!important}
+  [style*="padding:90px"]{padding-top:56px!important;padding-bottom:80px!important}
+  [style*="gap:48px 96px"],[style*="gap:40px 96px"],[style*="gap:48px 71px"],[style*="gap:40px 72px"]{gap:36px!important}
+  [style*="border-left:2px solid #641822;padding-left:28px"]{border-left:0!important;padding-left:0!important;border-top:2px solid #641822;padding-top:24px!important}
+  [style*="font-size:18px;line-height:1.6"]{font-size:17px!important}
+}
+@media (max-width:480px){
+
+  [style*="aspect-ratio:516/296"]{flex-basis:100%!important;max-width:100%!important}
+  [style*="min-width:0;max-width:760px"]{flex-basis:100%!important}
+}
+
+.skip{position:absolute;left:12px;top:-60px;background:#641822;color:#F5F3EE!important;padding:10px 16px;border-radius:6px;z-index:100;text-decoration:none}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid #641822;outline-offset:3px;border-radius:2px}
+header{position:relative;z-index:20}
+.burger{display:none}
+@media (max-width:640px){
+  header{flex-wrap:nowrap!important}
+  .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:11px 9px;background:none;border:0;cursor:pointer;box-sizing:border-box}
+  .burger span{display:block;height:2px;width:100%;background:#641822;border-radius:2px;transition:transform .2s,opacity .2s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav#site-nav{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:6px 20px 18px!important;background:#F5F3EE;border-bottom:1px solid #D9D2C7;font-size:18px!important;box-shadow:0 12px 24px rgba(100,24,34,.08)}
+  nav#site-nav.open{display:flex!important}
+  nav#site-nav a{display:flex!important;align-items:center;min-height:48px;border-bottom:1px solid #E6E0D4}
+  nav#site-nav a:last-child{border-bottom:0}
+  nav#site-nav a[aria-label="LinkedIn"]::after{display:inline-block;text-decoration:none;content:"LinkedIn";margin-left:12px;font-size:18px;color:#3D2F2A}
+}
+</style>
+<noscript><style>.burger{display:none!important}nav#site-nav{display:flex!important;position:static!important;flex-direction:row!important;flex-wrap:wrap!important}</style></noscript>
+<script is:inline src="/menu.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+
+<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="position:relative;overflow:hidden"><div style={`position:relative;z-index:1;padding-bottom:${padBottom}px`}>
+
+<Header current={current} compact={caseStudy} />
+<slot />
+</div></div>
+<Footer narrow={caseStudy} />
+</div>
+
+</body>
+</html>

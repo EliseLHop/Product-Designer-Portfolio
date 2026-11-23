@@ -1,0 +1,22 @@
+---
+// En-tête du site, partagé par toutes les pages.
+// current : la page active du menu ("home", "projects" ou "about")
+// compact : version plus serrée utilisée sur les études de cas
+interface Props { current: "home" | "projects" | "about"; compact?: boolean }
+const { current, compact = false } = Astro.props;
+const links = [
+  ["/", "home", "Home"],
+  ["/projects", "projects", "Projects"],
+  ["/about", "about", "About me"],
+];
+---
+<header style={`display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:${compact ? "18px 40px" : "11px 50px"};border-bottom:1px solid #D9D2C7;box-sizing:border-box`}>
+  <a href="/" aria-label="Elise L’Hopitault, home" style="font-family:'Playfair Display',serif;font-weight:700;font-size:30px;color:#641822;letter-spacing:.01em;text-decoration:none">EL</a>
+  <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Main" style={`display:flex;flex-wrap:wrap;align-items:center;gap:${compact ? "8px 36px;font-size:15px" : "8px 52px;font-size:17px"}`}>
+    {links.map(([href, key, label]) => (
+      <a href={href} aria-current={current === key ? "page" : undefined} style={current === key ? "color:#641822;text-decoration:none;font-weight:700" : "color:#3D2F2A;text-decoration:none"}>{label}</a>
+    ))}
+    <a href="resume/Elise-LHopitault-CV-Product-Designer-EN.pdf" target="_blank" rel="noopener noreferrer" style="color:#3D2F2A;text-decoration:none">Resume</a>
+    <a href="https://www.linkedin.com/in/elise-lhopitault" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="display:inline-flex"><svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="LinkedIn"><rect width="26" height="26" rx="4" fill="#3D2F2A"></rect><text x="13" y="19" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-weight="700" font-size="14" fill="#F5F3EE">in</text></svg></a>
+  </nav>
+</header>
