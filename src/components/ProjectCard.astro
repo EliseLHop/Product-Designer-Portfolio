@@ -1,0 +1,151 @@
+---
+// Carte projet « verre », utilisée sur l'accueil et la page Projects.
+// Comme un composant Figma : on l'écrit une fois, et chaque carte
+// ne fait que remplir ses props (ses « variantes » et son contenu).
+interface Props {
+  href: string;          // lien vers l'étude de cas, ex. "/gpc"
+  image: string;         // image dans public/images, ex. "images/gpc-hero.webp"
+  alt: string;           // texte alternatif de l'image
+  tags: string[];        // pastilles, ex. ["Power BI", "Redesign"]
+  title: string;
+  description: string;
+  layout?: "horizontal" | "vertical"; // horizontal = image à gauche, texte à droite
+  priority?: boolean;    // true pour la première image visible : chargée en priorité
+  imagePosition?: string; // cadrage de l'image, ex. "center 40%"
+}
+const {
+  href, image, alt, tags, title, description,
+  layout = "vertical", priority = false, imagePosition = "center",
+} = Astro.props;
+---
+<article class:list={["card", layout]}>
+  <img
+    src={image}
+    alt={alt}
+    decoding="async"
+    loading={priority ? undefined : "lazy"}
+    fetchpriority={priority ? "high" : undefined}
+    style={`object-position:${imagePosition}`}
+  />
+  <div class="body">
+    <ul class="tags">
+      {tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+    <h3 class="title">{title}</h3>
+    <p class="desc">{description}</p>
+    <a class="cta" href={href}>
+      View case study<span class="sr-only">: {title}</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg>
+    </a>
+  </div>
+</article>
+
+<style>
+  /* Ce style ne s'applique qu'à ce composant (Astro le « scope » automatiquement). */
+
+  /* La carte en verre — réglages repris de la maquette Figma */
+  .card {
+    box-sizing: border-box;
+    display: flex;
+    min-width: 0;
+    padding: 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    /* Reflet de la lumière à -45° (le « Light » de l'effet Glass) */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 45%, rgba(255, 255, 255, 0) 100%);
+    /* Frost : léger flou de ce qu'il y a derrière la carte */
+    -webkit-backdrop-filter: blur(5px) saturate(1.15);
+    backdrop-filter: blur(5px) saturate(1.15);
+    box-shadow:
+      6px 6px 5px rgba(142, 141, 143, 0.33),       /* Drop shadow : X 6, Y 6, flou 5, #8E8D8F 33 % */
+      inset 6px 6px 5px rgba(142, 141, 143, 0.25), /* Inner shadow : X 6, Y 6, flou 5, #8E8D8F 25 % */
+      inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.9); /* Liseré lumineux en haut à gauche */
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tags li {
+    border: 1.5px solid #641822;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .title {
+    margin: 0 0 4px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    color: #641822;
+  }
+
+  .desc {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  /* Le CTA va en bas à droite de la carte */
+  .cta {
+    align-self: flex-end;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #641822;
+  }
+
+  /* Variante verticale : image en haut, texte en dessous */
+  .vertical {
+    flex-direction: column;
+    flex: 1 1 280px;
+    max-width: 439px;
+  }
+  .vertical img { aspect-ratio: 407 / 233; }
+  .vertical .body { flex: 1; padding: 20px 4px 4px; }
+  .vertical .title { margin-top: 20px; }
+  .vertical .cta { padding-top: 22px; }
+
+  /* Variante horizontale : image à gauche, texte à droite */
+  .horizontal {
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 24px 48px;
+  }
+  .horizontal img { flex: 1 1 320px; max-width: 516px; aspect-ratio: 516 / 296; }
+  .horizontal .body { flex: 1 1 320px; justify-content: center; padding: 16px 32px 16px 8px; }
+  .horizontal .title { margin-top: 34px; margin-bottom: 6px; }
+  .horizontal .cta { padding-top: 26px; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .horizontal { gap: 16px; }
+    .horizontal img { max-width: 100%; flex-basis: 100%; }
+    .horizontal .body { padding: 4px 8px 8px; }
+  }
+</style>

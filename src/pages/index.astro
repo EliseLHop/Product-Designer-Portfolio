@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 <Layout current="home" padBottom={99}>
 <Fragment slot="head">
@@ -34,54 +35,55 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- MY CASES STUDY -->
 <div style="width:100%;max-width:1427px;margin:100px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 107px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My cases study</h2><div style="display:flex;flex-direction:column;gap:88px">
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:48px 28px">
-      <img decoding="async" fetchpriority="high" src="images/gpc-hero.webp" alt="GPC 2.0 report displayed on a tablet held in two hands." style="display:block;flex:1 1 320px;max-width:516px;min-width:0;aspect-ratio:516/296;object-fit:cover">
-      <div style="flex:1 1 320px;max-width:556px;min-width:0;padding-left:0">
-        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Development</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Data Visualization</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">PowerBi</span></div>
-        <div style="font-family:'Roboto Mono',monospace;font-weight:600;font-size:18px;margin:34px 0 6px">GPC 2.0</div>
-        <p style="margin:0;font-size:16px;line-height:1.3">Executive reporting in Power BI, built from a Figma mock-up for ENGIE’s business units.</p>
-        <a href="/gpc" style="display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:600;font-size:16px;text-decoration:none;color:#641822">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
-      </div>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:48px 28px">
-      <img decoding="async" loading="lazy" src="images/rse-hero.webp" alt="Climate – Site report displayed on a laptop." style="display:block;flex:1 1 320px;max-width:516px;min-width:0;aspect-ratio:516/296;object-fit:cover">
-      <div style="flex:1 1 320px;max-width:556px;min-width:0;padding-left:0">
-        <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Redesign</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Data Visualization</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">PowerBi</span></div>
-        <div style="font-family:'Roboto Mono',monospace;font-weight:600;font-size:18px;margin:34px 0 6px">RSE Environnement</div>
-        <p style="margin:0;font-size:16px;line-height:1.3">Redesign of ENGIE’s climate and environmental risk reports in Power BI.</p>
-        <a href="/rse" style="display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-weight:600;font-size:16px;text-decoration:none;color:#641822">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
-      </div>
-    </div></div></div>
+    <ProjectCard
+      href="/gpc"
+      image="images/gpc-hero.webp"
+      alt="GPC 2.0 report displayed on a tablet held in two hands."
+      tags={["Development", "Data Visualization", "PowerBi"]}
+      title="GPC 2.0"
+      description="Executive reporting in Power BI, built from a Figma mock-up for ENGIE’s business units."
+      layout="horizontal"
+      priority
+    />
+    <ProjectCard
+      href="/rse"
+      image="images/rse-hero.webp"
+      alt="Climate – Site report displayed on a laptop."
+      tags={["Redesign", "Data Visualization", "PowerBi"]}
+      title="RSE Environnement"
+      description="Redesign of ENGIE’s climate and environmental risk reports in Power BI."
+      layout="horizontal"
+    /></div></div>
 
 <!-- SCHOOL -->
-<div style="width:100%;max-width:1427px;margin:160px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 70px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My school’s cases study</h2><div style="display:flex;flex-wrap:wrap;gap:48px 71px;align-items:flex-start">
-    <div style="flex:1 1 280px;max-width:407px;min-width:0">
-      <img decoding="async" loading="lazy" src="images/eventorias-hero.webp" alt="Eventorias event list on a phone held in a hand." style="display:block;width:100%;aspect-ratio:407/233;object-fit:cover;object-position:center 40%">
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0 11px"><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">No-code Prototype</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Handoff to Dev</span></div>
-      <div style="margin:20px 0 0 11px">
-        <div style="font-family:'Roboto Mono',monospace;font-weight:600;font-size:18px;letter-spacing:.06em;margin-bottom:4px">Eventorias</div>
-        <p style="margin:0;font-size:16px;line-height:1.25">A “no-code” prototype that helps English-speaking tourists find an event in Paris.</p>
-        <a href="/eventorias" style="display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:16px;text-decoration:none;color:#641822">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
-      </div>
-    </div>
-    <div style="flex:1 1 280px;max-width:407px;min-width:0">
-      <img decoding="async" loading="lazy" src="images/flowrate-hero.webp" alt="Flowrate landing page displayed on a laptop." style="display:block;width:100%;aspect-ratio:407/233;object-fit:cover;object-position:center 40%">
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0 11px"><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Ux Audit</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Roadmap</span></div>
-      <div style="margin:20px 0 0 11px">
-        <div style="font-family:'Roboto Mono',monospace;font-weight:600;font-size:18px;letter-spacing:.06em;margin-bottom:4px">Flowrate</div>
-        <p style="margin:0;font-size:16px;line-height:1.25">Understanding why 86% of users drop out of the onboarding process, and a four-month plan to address the issue.</p>
-        <a href="/flowrate" style="display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:16px;text-decoration:none;color:#641822">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
-      </div>
-    </div>
-    <div style="flex:1 1 280px;max-width:407px;min-width:0">
-      <img decoding="async" loading="lazy" src="images/bambinets-hero.webp" alt="Les bambinets app home screen on a phone held in a hand." style="display:block;width:100%;aspect-ratio:407/233;object-fit:cover;object-position:center 40%">
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0 11px"><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Accessibility</span><span style="border:1.5px solid #641822;border-radius:999px;padding:4px 12px;font-size:16px;line-height:1.3">Design system</span></div>
-      <div style="margin:20px 0 0 11px">
-        <div style="font-family:'Roboto Mono',monospace;font-weight:600;font-size:18px;letter-spacing:.06em;margin-bottom:4px">Les bambinets</div>
-        <p style="margin:0;font-size:16px;line-height:1.25">A visual identity, an accessible design system, and a prototype sign language app for young children.</p>
-        <a href="/bambinets" style="display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:16px;text-decoration:none;color:#641822">View case study<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#641822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"></path></svg></a>
-      </div>
-    </div></div></div>
+<div style="width:100%;max-width:1427px;margin:160px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 70px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My school’s cases study</h2><div style="display:flex;flex-wrap:wrap;gap:48px 40px;align-items:stretch">
+    <ProjectCard
+      href="/eventorias"
+      image="images/eventorias-hero.webp"
+      alt="Eventorias event list on a phone held in a hand."
+      tags={["No-code Prototype", "Handoff to Dev"]}
+      title="Eventorias"
+      description="A “no-code” prototype that helps English-speaking tourists find an event in Paris."
+      imagePosition="center 40%"
+    />
+    <ProjectCard
+      href="/flowrate"
+      image="images/flowrate-hero.webp"
+      alt="Flowrate landing page displayed on a laptop."
+      tags={["Ux Audit", "Roadmap"]}
+      title="Flowrate"
+      description="Understanding why 86% of users drop out of the onboarding process, and a four-month plan to address the issue."
+      imagePosition="center 40%"
+    />
+    <ProjectCard
+      href="/bambinets"
+      image="images/bambinets-hero.webp"
+      alt="Les bambinets app home screen on a phone held in a hand."
+      tags={["Accessibility", "Design system"]}
+      title="Les bambinets"
+      description="A visual identity, an accessible design system, and a prototype sign language app for young children."
+      imagePosition="center 40%"
+    /></div></div>
 
 <!-- ABOUT -->
 <div style="width:100%;max-width:1427px;margin:170px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 70px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">And about me ?</h2><div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px">
