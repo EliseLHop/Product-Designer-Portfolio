@@ -142,6 +142,18 @@ const {
   .horizontal .title { margin-top: 34px; margin-bottom: 6px; }
   .horizontal .cta { padding-top: 26px; }
 
+  /* Quand le verre WebGL est actif (classe glass-on posée par src/scripts/glass.ts),
+     c'est le canvas qui dessine la vitre : on retire le reflet et le flou CSS. */
+  :global(.glass-on) .card {
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+      6px 6px 5px rgba(142, 141, 143, 0.33),
+      inset 6px 6px 5px rgba(142, 141, 143, 0.18);
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .horizontal { gap: 16px; }
