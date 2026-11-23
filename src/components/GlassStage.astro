@@ -1,0 +1,37 @@
+---
+// Scène de verre : un fond dessiné en WebGL derrière son contenu,
+// et des vitres qui réfractent ce fond sous chaque carte (.card) qu'elle contient.
+// Utilisation : <GlassStage> …des <ProjectCard />… </GlassStage>
+// Si WebGL n'est pas disponible, les cartes gardent leur version CSS.
+---
+<div class="glass-stage" data-glass-stage>
+  <canvas class="glass-canvas" aria-hidden="true"></canvas>
+  <div class="glass-content"><slot /></div>
+</div>
+
+<script>
+  import { mountGlass, GLASS_SETTINGS } from "../scripts/glass";
+  // Ce script est chargé une seule fois par page, même s'il y a plusieurs scènes.
+  document.querySelectorAll<HTMLElement>("[data-glass-stage]").forEach((stage) => {
+    mountGlass(stage, stage.querySelector("canvas")!, { ...GLASS_SETTINGS });
+  });
+</script>
+
+<style>
+  .glass-stage {
+    position: relative;
+    overflow: hidden; /* garde les marges du contenu à l'intérieur de la scène */
+    padding-bottom: 110px;
+  }
+  .glass-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .glass-content { position: relative; }
+  @media (max-width: 768px) {
+    .glass-stage { padding-bottom: 72px; }
+  }
+</style>

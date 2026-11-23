@@ -56,7 +56,10 @@ vec3 background(vec2 p) {
   // fines lignes diagonales très légères, pour qu'on voie la déformation même sur les zones unies
   float lines = smoothstep(0.92, 1.0, sin((p.x + p.y) / (14.0 * u_dpr)) * 0.5 + 0.5);
   col = mix(col, col * 0.86, lines * 0.25);
-  return col;
+  // le fond s'estompe en haut et en bas de la section, pour se fondre dans le beige de la page
+  float fadeSize = 180.0 * u_dpr;
+  float fade = smoothstep(0.0, fadeSize, p.y) * smoothstep(0.0, fadeSize, u_res.y - p.y);
+  return mix(vec3(0.961, 0.953, 0.933), col, fade);
 }
 
 // ---------- Forme de la carte : distance signée à un rectangle arrondi

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import GlassStage from "../components/GlassStage.astro";
 ---
 <Layout current="projects">
 <Fragment slot="head">
@@ -29,6 +30,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 </div>
 
 <!-- MY CASES STUDY -->
+<GlassStage>
 <div style="width:100%;max-width:1427px;margin:70px auto 0;padding:0 32px;box-sizing:border-box">
   <h2 style="margin:0 0 46px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My cases study</h2>
   <div style="display:flex;flex-wrap:wrap;gap:48px 40px;align-items:stretch">
@@ -54,8 +56,10 @@ import ProjectCard from "../components/ProjectCard.astro";
 
   </div>
 </div>
+</GlassStage>
 
 <!-- MY SCHOOL'S CASES STUDY -->
+<GlassStage>
 <div style="width:100%;max-width:1427px;margin:96px auto 0;padding:0 32px;box-sizing:border-box">
   <h2 style="margin:0 0 46px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My school’s cases study</h2>
   <div style="display:flex;flex-wrap:wrap;gap:48px 40px;align-items:stretch">
@@ -92,6 +96,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
   </div>
 </div>
+</GlassStage>
 
 </main>
 <!-- CONNECT -->

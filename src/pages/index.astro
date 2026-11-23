@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import GlassStage from "../components/GlassStage.astro";
 ---
 <Layout current="home" padBottom={99}>
 <Fragment slot="head">
@@ -34,6 +35,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 </div>
 
 <!-- MY CASES STUDY -->
+<GlassStage>
 <div style="width:100%;max-width:1427px;margin:100px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 107px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My cases study</h2><div style="display:flex;flex-direction:column;gap:88px">
     <ProjectCard
       href="/gpc"
@@ -54,8 +56,10 @@ import ProjectCard from "../components/ProjectCard.astro";
       description="Redesign of ENGIE’s climate and environmental risk reports in Power BI."
       layout="horizontal"
     /></div></div>
+</GlassStage>
 
 <!-- SCHOOL -->
+<GlassStage>
 <div style="width:100%;max-width:1427px;margin:160px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 70px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">My school’s cases study</h2><div style="display:flex;flex-wrap:wrap;gap:48px 40px;align-items:stretch">
     <ProjectCard
       href="/eventorias"
@@ -84,6 +88,7 @@ import ProjectCard from "../components/ProjectCard.astro";
       description="A visual identity, an accessible design system, and a prototype sign language app for young children."
       imagePosition="center 40%"
     /></div></div>
+</GlassStage>
 
 <!-- ABOUT -->
 <div style="width:100%;max-width:1427px;margin:170px auto 0;padding:0 32px 0px;box-sizing:border-box"><h2 style="margin:0 0 70px;font-family:'Roboto Mono',monospace;font-weight:700;font-size:32px;line-height:1.2;color:#641822">And about me ?</h2><div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px">
