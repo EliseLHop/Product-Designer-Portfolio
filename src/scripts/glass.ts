@@ -15,8 +15,9 @@ export type GlassSettings = {
   animate: boolean;   // le fond bouge doucement
 };
 
-export const FIGMA_SETTINGS: GlassSettings = {
-  refraction: 86, depth: 70, dispersion: 9, frost: 5, splay: 35, light: -45, animate: true,
+// Réglages choisis par Elise après test de la démo (23/11/2026)
+export const GLASS_SETTINGS: GlassSettings = {
+  refraction: 86, depth: 51, dispersion: 9, frost: 69, splay: 18, light: -134, animate: true,
 };
 
 const MAX_CARDS = 12;

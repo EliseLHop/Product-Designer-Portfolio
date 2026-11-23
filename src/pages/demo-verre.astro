@@ -12,7 +12,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 <main id="main">
   <div class="intro">
     <h1>Glass demo</h1>
-    <p>Prototype : fond provisoire et vitres dessinées en WebGL, avec les réglages de la maquette Figma. Utilise le panneau en bas à droite pour ajuster l’effet en direct.</p>
+    <p>Prototype : fond provisoire et vitres dessinées en WebGL, avec les réglages retenus. Utilise le panneau en bas à droite pour ajuster l’effet en direct.</p>
   </div>
 
   <section class="glass-stage" id="glass-stage">
@@ -74,26 +74,26 @@ import ProjectCard from "../components/ProjectCard.astro";
   <form class="panel" id="glass-panel" aria-label="Réglages du verre">
     <div class="panel-title">Glass</div>
     <label>Refraction <input type="range" name="refraction" min="0" max="100" value="86"><output>86</output></label>
-    <label>Depth <input type="range" name="depth" min="0" max="100" value="70"><output>70</output></label>
+    <label>Depth <input type="range" name="depth" min="0" max="100" value="51"><output>51</output></label>
     <label>Dispersion <input type="range" name="dispersion" min="0" max="100" value="9"><output>9</output></label>
-    <label>Frost <input type="range" name="frost" min="0" max="100" value="5"><output>5</output></label>
-    <label>Splay <input type="range" name="splay" min="0" max="100" value="35"><output>35</output></label>
-    <label>Light <input type="range" name="light" min="-180" max="180" value="-45"><output>-45°</output></label>
+    <label>Frost <input type="range" name="frost" min="0" max="100" value="69"><output>69</output></label>
+    <label>Splay <input type="range" name="splay" min="0" max="100" value="18"><output>18</output></label>
+    <label>Light <input type="range" name="light" min="-180" max="180" value="-134"><output>-134°</output></label>
     <label class="check"><input type="checkbox" name="animate" checked> Fond animé</label>
-    <button type="button" id="glass-reset">Réglages Figma</button>
+    <button type="button" id="glass-reset">Réglages par défaut</button>
     <p class="status" id="glass-status"></p>
   </form>
 </main>
 </Layout>
 
 <script>
-  import { mountGlass, FIGMA_SETTINGS } from "../scripts/glass";
+  import { mountGlass, GLASS_SETTINGS } from "../scripts/glass";
 
   const stage = document.getElementById("glass-stage")!;
   const canvas = stage.querySelector("canvas")!;
   const panel = document.getElementById("glass-panel") as HTMLFormElement;
   const status = document.getElementById("glass-status")!;
-  const update = mountGlass(stage, canvas, { ...FIGMA_SETTINGS });
+  const update = mountGlass(stage, canvas, { ...GLASS_SETTINGS });
 
   if (!update) {
     status.textContent = "WebGL indisponible : version CSS affichée.";
@@ -107,7 +107,7 @@ import ProjectCard from "../components/ProjectCard.astro";
       update({ [input.name]: Number(input.value) });
     });
     document.getElementById("glass-reset")!.addEventListener("click", () => {
-      for (const [key, value] of Object.entries(FIGMA_SETTINGS)) {
+      for (const [key, value] of Object.entries(GLASS_SETTINGS)) {
         const input = panel.elements.namedItem(key) as HTMLInputElement;
         if (input.type === "checkbox") input.checked = value as boolean;
         else {
@@ -115,7 +115,7 @@ import ProjectCard from "../components/ProjectCard.astro";
           (input.nextElementSibling as HTMLOutputElement).textContent = key === "light" ? `${value}°` : String(value);
         }
       }
-      update({ ...FIGMA_SETTINGS });
+      update({ ...GLASS_SETTINGS });
     });
   }
 </script>
