@@ -79,7 +79,6 @@ import ProjectCard from "../components/ProjectCard.astro";
     <label>Frost <input type="range" name="frost" min="0" max="100" value="69"><output>69</output></label>
     <label>Splay <input type="range" name="splay" min="0" max="100" value="18"><output>18</output></label>
     <label>Light <input type="range" name="light" min="-180" max="180" value="-134"><output>-134°</output></label>
-    <label class="check"><input type="checkbox" name="animate" checked> Fond animé</label>
     <button type="button" id="glass-reset">Réglages par défaut</button>
     <p class="status" id="glass-status"></p>
   </form>
@@ -101,7 +100,6 @@ import ProjectCard from "../components/ProjectCard.astro";
     // Chaque curseur met à jour le shader en direct
     panel.addEventListener("input", (event) => {
       const input = event.target as HTMLInputElement;
-      if (input.type === "checkbox") return update({ animate: input.checked });
       const out = input.nextElementSibling as HTMLOutputElement;
       out.textContent = input.name === "light" ? `${input.value}°` : input.value;
       update({ [input.name]: Number(input.value) });
@@ -109,8 +107,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     document.getElementById("glass-reset")!.addEventListener("click", () => {
       for (const [key, value] of Object.entries(GLASS_SETTINGS)) {
         const input = panel.elements.namedItem(key) as HTMLInputElement;
-        if (input.type === "checkbox") input.checked = value as boolean;
-        else {
+        {
           input.value = String(value);
           (input.nextElementSibling as HTMLOutputElement).textContent = key === "light" ? `${value}°` : String(value);
         }

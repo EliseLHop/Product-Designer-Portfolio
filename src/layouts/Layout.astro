@@ -4,6 +4,7 @@
 // et ses balises <title>/<meta> dans <slot name="head" />.
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ParticleBackground from "../components/ParticleBackground.astro";
 interface Props {
   current: "home" | "projects" | "about";
   caseStudy?: boolean; // étude de cas : en-tête compact, pied de page étroit
@@ -85,9 +86,9 @@ header{position:relative;z-index:20}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<ParticleBackground />
 
-
-<div style="background:#F5F3EE;color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
+<div style="color:#641822;font-family:'Instrument Sans',sans-serif;width:100%;min-height:100vh;display:flex;flex-direction:column">
 <div style="position:relative;overflow:hidden"><div style={`position:relative;z-index:1;padding-bottom:${padBottom}px`}>
 
 <Header current={current} compact={caseStudy} />
